@@ -1,5 +1,5 @@
 # TRABALHO 01:  Título do Trabalho
-Trabalho desenvolvido durante a disciplina de BD1
+Trabalho desenvolvido durante a disciplina de BD1 no semestre 2021/1
 
 # Sumário
 
