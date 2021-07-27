@@ -5,10 +5,9 @@ Trabalho desenvolvido durante a disciplina de BD1
 
 ### 1. COMPONENTES<br>
 Integrantes do grupo<br>
-Primeiro_componente_do_grupo:email_primeiro_componente@dominio.com<br>
-Segundo_componente_do_grupo:email_segundo_componente@dominio.com<br>
-Terceiro_componente_do_grupo:email_segundo_componente@dominio.com<br>
-...<br>
+Matheus Henrique:email_primeiro_componente@dominio.com<br>
+George Matheus:email_segundo_componente@dominio.com<br>
+Lorhan Souza:lorhan.s160@gmail.com<br>
 
 ### 2.INTRODUÇÃO E MOTIVAÇÃO<br>
 Este documento contém a especificação do projeto do banco de dados <nome do projeto> 
@@ -24,10 +23,10 @@ Entrevista com o usuário e identificação dos requisitos.(quando for o caso de
 Descrição textual das regras de negócio definidas como um  subconjunto do mundo real 
 cujos elementos são propriedades que desejamos incluir, processar, armazenar, 
 gerenciar, atualizar, e que descrevem a proposta/solução a ser desenvolvida.
+ 
+Controle de vacinação COVID
 
-> Controle de vacinação COVID
-
-O prefeito de uma cidade deseja um sistema que sirva de base para saber o andamento da vacinação em sua cidade. Para isso ele deseja que o sistema armazene o cpf, nome, telefone e endereço do cidadão vacinado, além de sua data de nascimento. Devido à quantidade de casos de falsa aplicação da vacina, o secretário quer,como método de segurança, que seja salvo a data do ato da vacinação, a dose tomada e os dados (cofen e nome) da(o) enfermeira(o) de plantão no posto de saúde em que foi vacinado juntamente com o cpf do vacinado. Quanto às vacinas, deve ser armazenado o tipo(marca). Vale lembrar que as pessoas devem ser vacinadas com as duas doses da mesma vacina. 
+> O prefeito de uma cidade deseja um sistema que sirva de base para saber o andamento da vacinação em sua cidade. Para isso ele deseja que o sistema armazene o cpf, nome, telefone e endereço do cidadão vacinado, além de sua data de nascimento. Devido à quantidade de casos de falsa aplicação da vacina, o secretário quer,como método de segurança, que seja salvo a data do ato da vacinação, a dose tomada e os dados (cofen e nome) da(o) enfermeira(o) de plantão no posto de saúde em que foi vacinado juntamente com o cpf do vacinado. Quanto às vacinas, deve ser armazenado o tipo(marca). Vale lembrar que as pessoas devem ser vacinadas com as duas doses da mesma vacina. 
 
 ### 4.PROTOTIPAÇÃO, PERGUNTAS A SEREM RESPONDIDAS E TABELA DE DADOS<br>
 #### 4.1 RASCUNHOS BÁSICOS DA INTERFACE (MOCKUPS)<br>
