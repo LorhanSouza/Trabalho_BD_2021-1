@@ -1,4 +1,4 @@
-# TRABALHO 01:  Título do Trabalho
+# TRABALHO 01:  Controle de Vacinação
 Trabalho desenvolvido durante a disciplina de BD1 no semestre 2021/1
 
 # Sumário
@@ -6,7 +6,7 @@ Trabalho desenvolvido durante a disciplina de BD1 no semestre 2021/1
 ### 1. COMPONENTES<br>
 Integrantes do grupo<br>
 Matheus Henrique:email_primeiro_componente@dominio.com<br>
-George Matheus:email_segundo_componente@dominio.com<br>
+George Matheus:matheuss308@gmail.com<br>
 Lorhan Souza:lorhan.s160@gmail.com<br>
 
 ### 2.INTRODUÇÃO E MOTIVAÇÃO<br>
@@ -19,7 +19,6 @@ Este documento contém a especificação do projeto do banco de dados <nome do p
 ### 3.MINI-MUNDO<br>
 
 Descrever o mini-mundo! (Não deve ser maior do que 30 linhas, se necessário resumir para justar) <br>
-Entrevista com o usuário e identificação dos requisitos.(quando for o caso de sistemas com cliente  real)<br>
 Descrição textual das regras de negócio definidas como um  subconjunto do mundo real 
 cujos elementos são propriedades que desejamos incluir, processar, armazenar, 
 gerenciar, atualizar, e que descrevem a proposta/solução a ser desenvolvida.
