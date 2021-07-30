@@ -10,18 +10,13 @@ George Matheus:matheuss308@gmail.com<br>
 Lorhan Souza:lorhan.s160@gmail.com<br>
 
 ### 2.INTRODUÇÃO E MOTIVAÇÃO<br>
-Este documento contém a especificação do projeto do banco de dados <nome do projeto> 
+Este documento contém a especificação do projeto do banco de dados do VaCard 
 <br>e motivação da escolha realizada. <br>
 
 > O projeto "VaCard foi realizado como forma avaliativa do aprendizado em Banco de Dados I. Sabendo-se dos desafios para gerenciar informações sobre a vacinação e visando unir as informações relativas a cidadãos da cidade e prefeito, ficamos motivados com o desenvolvimento deste sistema. O Sistema "VaCard" tem como objetivo gerenciar todas as informações à vacinação dos cidadãos. Para que a vacinação dos cidadãos de forma adequada a prefeitura necessita que sistema que armazene informações relativas à vacinação e cidadãos , além de também armazenar dados sobre  os cidadãos, enfermeiros e as vacinas. O sistema deverá gerar um conjunto de relatórios que por sua vez atenderá os anseios da prefeitura.
  
 
 ### 3.MINI-MUNDO<br>
-
-Descrever o mini-mundo! (Não deve ser maior do que 30 linhas, se necessário resumir para justar) <br>
-Descrição textual das regras de negócio definidas como um  subconjunto do mundo real 
-cujos elementos são propriedades que desejamos incluir, processar, armazenar, 
-gerenciar, atualizar, e que descrevem a proposta/solução a ser desenvolvida.
  
 Controle de vacinação COVID
 
@@ -29,12 +24,12 @@ Controle de vacinação COVID
 
 ### 4.PROTOTIPAÇÃO, PERGUNTAS A SEREM RESPONDIDAS E TABELA DE DADOS<br>
 #### 4.1 RASCUNHOS BÁSICOS DA INTERFACE (MOCKUPS)<br>
-Neste ponto a codificação não e necessária, somente as ideias de telas devem ser criadas, o princípio aqui é pensar na criação da interface para identificar possíveis informações a serem armazenadas ou descartadas <br>
+Este é o rascunho do nosso projeto.<br>
+Abaixo estão a primeira tela do projeto e o arquivo PDF navegável para explorar o projeto.<br>
+<br>
+![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/Login.png?raw=true "Entrada")
+![Arquivo PDF do Protótipo Balsamiq feito para o VaCard](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/arquivos/Protótipo.pdf?raw=true "Projeto VaCard")<br>
 
-Sugestão: https://balsamiq.com/products/mockups/<br>
-
-![Alt text](https://github.com/discipbd1/trab01/blob/master/balsamiq.png?raw=true "Title")
-![Arquivo PDF do Protótipo Balsamiq feito para Empresa Devcom](https://github.com/discipbd1/trab01/blob/master/arquivos/EmpresaDevcom.pdf?raw=true "Empresa Devcom")
 #### 4.2 QUAIS PERGUNTAS PODEM SER RESPONDIDAS COM O SISTEMA PROPOSTO?
     a) O sistema proposto poderá fornecer quais tipos de relatórios e informaçes? 
     b) Crie uma lista com os 5 principais relatórios que poderão ser obtidos por meio do sistema proposto!
@@ -56,21 +51,13 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
 ![Exemplo de Tabela de dados da Empresa Devcom](https://github.com/discipbd1/trab01/blob/master/arquivos/TabelaEmpresaDevCom_sample.xlsx?raw=true "Tabela - Empresa Devcom")
     
     
-### 5.MODELO CONCEITUAL<br>
-    A) Utilizar a Notação adequada (Preferencialmente utilizar o BR Modelo 3)
-    B) O mínimo de entidades do modelo conceitual pare este trabalho será igual a 3 e o Máximo 5.
-        * informe quais são as 3 principais entidades do sistema em densenvolvimento<br>(se houverem mais de 3 entidades, pense na importância da entidade para o sistema)       
-    C) Principais fluxos de informação/entidades do sistema (mínimo 3). <br>Dica: normalmente estes fluxos estão associados as tabelas que conterão maior quantidade de dados 
-    D) Qualidade e Clareza
-        Garantir que a semântica dos atributos seja clara no esquema (nomes coerentes com os dados).
-        Criar o esquema de forma a garantir a redução de informação redundante, possibilidade de valores null, 
-        e tuplas falsas (Aplicar os conceitos de normalização abordados).   
-        
-![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/IMG-20210717-WA0024.jpg?raw=true "Modelo Conceitual")
+### 5.MODELO CONCEITUAL<br>  
+Modelo Conceitual feito a partir das informações retiradas do MiniMundo.<br>
+
+![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/IMG-20210717-WA0024.jpg?raw=true "Modelo Conceitual")<br>
+![Arquivo BrModelo do Modelo Conceitual](https://github.com/Trabalho_BD_2021-1/blob/master/arquivos/br_ModeloV3.brM3?raw=true "BR Modelo")<br>    
     
-    
-        
-    
+           
 #### 5.1 Validação do Modelo Conceitual
     [Grupo01]: [Nomes dos que participaram na avaliação]
     [Grupo02]: [Nomes dos que participaram na avaliação]
@@ -84,12 +71,10 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
 
 
 ### 6	MODELO LÓGICO<br>
-        a) inclusão do esquema lógico do banco de dados
-        b) verificação de correspondencia com o modelo conceitual 
-        (não serão aceitos modelos que não estejam em conformidade)
+Modelo Lógico baseado no Modelo Conceitual do projeto VaCard.<br>
 
 ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/IMG-20210717-WA0023.jpg?raw=true "Modelo Lógico")
- 
+
 ### 7	MODELO FÍSICO<br>
         a) inclusão das instruções de criacão das estruturas em SQL/DDL 
         (criação de tabelas, alterações, etc..) 
