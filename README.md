@@ -55,7 +55,7 @@ Abaixo estão a primeira tela do projeto e o arquivo PDF navegável para explora
 Modelo Conceitual feito a partir das informações retiradas do MiniMundo.<br>
 
 ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/IMG-20210717-WA0024.jpg?raw=true "Modelo Conceitual")<br>
-![Arquivo BrModelo do Modelo Conceitual](https://github.com/Trabalho_BD_2021-1/blob/master/arquivos/br_ModeloV3.brM3?raw=true "BR Modelo")<br>    
+![Arquivo BrModelo do Modelo Conceitual](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/arquivos/br_ModeloV3.brM3?raw=true "BR Modelo")<br>    
     
            
 #### 5.1 Validação do Modelo Conceitual
@@ -73,7 +73,8 @@ Modelo Conceitual feito a partir das informações retiradas do MiniMundo.<br>
 ### 6	MODELO LÓGICO<br>
 Modelo Lógico baseado no Modelo Conceitual do projeto VaCard.<br>
 
-![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/IMG-20210717-WA0023.jpg?raw=true "Modelo Lógico")
+![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/IMG-20210717-WA0023.jpg?raw=true "Modelo Lógico")<br>
+![Arquivo BrModelo do Modelo Lógico](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/arquivos/Logico_1.brM3?raw=true "BR Modelo Lógico")<br> 
 
 ### 7	MODELO FÍSICO<br>
         a) inclusão das instruções de criacão das estruturas em SQL/DDL 
