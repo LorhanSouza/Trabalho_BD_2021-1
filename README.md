@@ -30,15 +30,15 @@ Abaixo estão a primeira tela do projeto e o arquivo PDF navegável para explora
 ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/Login.png?raw=true "Entrada")
 ![Arquivo PDF do Protótipo Balsamiq feito para o VaCard](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/arquivos/Protótipo.pdf?raw=true "Projeto VaCard")<br>
 
-#### 4.2 QUAIS PERGUNTAS PODEM SER RESPONDIDAS COM O SISTEMA PROPOSTO?
-    a) O sistema proposto poderá fornecer quais tipos de relatórios e informaçes? 
-    b) Crie uma lista com os 5 principais relatórios que poderão ser obtidos por meio do sistema proposto!
-    
->1- Relatório que mostra todas as pessoas de cada bairro vacinadas.
-2- Relatório que mostra a quantidade de pessoas completamente imunizadas na cidade.
-3- Relatório que mostra todas como estão avançando as vacinações por faixa etária.
-4- Relatório que mostra qual vacina mais está sendo utilizda.
-5- Relatório que mostra qual o local onde as pessoas mais estão sendo vacinadas.
+#### 4.2 QUAIS PERGUNTAS PODEM SER RESPONDIDAS COM O SISTEMA PROPOSTO?<br>
+O sistema poderá fornecer relatórios sobre a questão da vacinação nos bairros da cidade, como as vacinas são distribuídas por faixa etária, o local de vacinação que mais vacinou pessoas, qual vacina é mais utilizada e a quantidade de pessoas completamente imunizadas na cidade.<br>
+
+Os principais relatórios gerados são:<br>
+>1- Relatório que mostra todas as pessoas de cada bairro vacinadas.<br>
+>2- Relatório que mostra a quantidade de pessoas completamente imunizadas na cidade.<br>
+>3- Relatório que mostra todas como estão avançando as vacinações por faixa etária.<br>
+>4- Relatório que mostra qual vacina mais está sendo utilizada.<br>
+>5- Relatório que mostra qual o local onde as pessoas mais estão sendo vacinadas.<br>
 
 #### 4.3 TABELA DE DADOS DO SISTEMA:
     a) Esta tabela deve conter todos os atributos do sistema e um mínimo de 10 linhas/registros de dados.
