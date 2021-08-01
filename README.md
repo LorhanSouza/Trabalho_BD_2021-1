@@ -217,10 +217,25 @@ create table CONTATO(
  ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/select_todos_contato.png?raw=true "Tabela Contato")<br>
     
     Select * from VACINA;
+    
+ ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/select_todos_vacina.png?raw=true "Tabela Contato")<br>
+
     Select * from LOCALIDADE;
-    Select * from ENFERMEIRA; 
+    
+ ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/select_todos_localidade.png?raw=true "Tabela Contato")<br>
+    
+    Select * from ENFERMEIRA;
+    
+ ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/select_todos_enfermeira.png?raw=true "Tabela Contato")<br>
+ 
     Select * from PESSOA;
+    
+ ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/select_todos_pessoa.png?raw=true "Tabela Contato")<br>   
+    
     Select * from VACINACAO;
+    
+ ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/select_todos_vacinacao.png?raw=true "Tabela Contato")<br>   
+    
 
 ># Marco de Entrega 01: Do item 1 até o item 9.1<br>
 
