@@ -34,10 +34,20 @@ Abaixo estão a primeira tela do projeto e o arquivo PDF navegável para explora
     a) O sistema proposto poderá fornecer quais tipos de relatórios e informaçes? 
     b) Crie uma lista com os 5 principais relatórios que poderão ser obtidos por meio do sistema proposto!
     
-> 
+> A Empresa DevCom precisa inicialmente dos seguintes relatórios:
+* Relatório que mostre o nome de cada supervisor(a) e a quantidade de empregados supervisionados.
+* Relatório relativo aos os supervisores e supervisionados. O resultado deve conter o nome do supervisor e nome do supervisionado além da quantidade total de horas que cada supervisionado tem alocada aos projetos existentes na empresa.
+* Relatorio que mostre para cada linha obtida o nome do departamento, o valor individual de cada salario existente no  departamento e a média geral de salarios dentre todos os empregados. Os resultados devem ser apresentados ordenados por departamento.
+* Relatório que mostre as informações relacionadas a todos empregados de empresa (sem excluir ninguém). As linhas resultantes devem conter informações sobre: rg, nome, salario do empregado, data de início do salario atual, nomes dos projetos que participa, quantidade de horas e localização nos referidos projetos, numero e nome dos departamentos aos quais está alocado, informações do historico de salário como inicio, fim, e valores de salarios antigos que foram inclusos na referida tabela (caso possuam informações na mesma), além de todas informações relativas aos dependentes. 
+>> ##### Observações: <br> a) perceba que este relatório pode conter linhas com alguns dados repetidos (mas não todos). <br>  b) para os empregados que não possuirem alguma destas informações o valor no registro deve aparecer sem informação/nulo. 
+* Relatório que obtenha a frequencia absoluta e frequencia relativa da quantidade de cpfs únicos no relatório anterior. Apresente os resultados ordenados de forma decrescente pela frequencia relativa.
 
- 
- 
+1- Relatório que mostra todas as pessoas de cada bairro vacinadas.
+2- Relatório que mostra a quantidade de pessoas completamente imunizadas na cidade.
+3- Relatório que mostra todas como estão avançando as vacinações por faixa etária.
+4- Relatório que mostra qual vacina mais está sendo utilizda.
+5- Relatório que mostra qual o local onde as pessoas mais estão sendo vacinadas.
+
 #### 4.3 TABELA DE DADOS DO SISTEMA:
     a) Esta tabela deve conter todos os atributos do sistema e um mínimo de 10 linhas/registros de dados.
     b) Esta tabela tem a intenção de simular um relatório com todos os dados que serão armazenados 
@@ -59,10 +69,36 @@ Modelo Conceitual feito a partir das informações retiradas do MiniMundo.<br>
 #### 5.2 Descrição dos dados 
     [objeto]: [descrição do objeto]
     
-    EXEMPLO:
-    PESSOA: Tabela que armazena as informações relativas ao cliente.
-    CPF: campo que armazena o número de Cadastro de Pessoa Física para cada cliente da empresa.
-    
+    PESSOA: Tabela que armazena as informações do vacinado
+    CPF: campo que armazena o número de Cadastro de Pessoa Física de cada vacinado
+    NOME: campo que armazena o nome do vacinado
+    DATA_NASC: campo que armazena a data de nascimento do vacinado
+    DESCRICAO_LOGRADOURO: campo que armazena nome do logradouro do vacinado
+    NUMERO_LOGRADOROU: campo que armazena numero da residencia do vacinado
+    BAIRRO: campo que armazena o bairro do vacinado
+    CEP: campo que armazena o cep do vacinado
+    ENFERMEIRA: Tabela que armazena as informações da enfermeira
+    COFEN: campo que armazena o cofen da enfermeira
+    NOME: campo que armazena o nome da enfermeira
+    VACINA: Tabela que armazenas as informações da vacina
+    COD_VACINA: campo que armazena o código de uma determinada vacina no sistema
+    DESCRICAO:  campo que armazena o nome da vacina
+    LOCALIDADE: Tabela que armazena as informações dos locais de aplicação das vacinas
+    ID_LOCAL: campo que armazena o codigo de um local de vacinação
+    DESCRICAO: campo que armazena a descrição do local
+    VACINACAO: Tabela que armazena dados de uma vacina aplicada
+    ID_APLICACAO: campo que armazena o codigo no sistema de uma vacina aplicada
+    DATA_DOSE: campo que armazena a data da aplicação
+    NUM_DOSE: campo que armazena o numero da dose que foi aplicada
+    fk_PESSOA_cpf: campo que armazena o CPF da pessoa vacinada
+    fk_VACINA_cod: campo que armazena o codigo da vacina aplicada
+    fk_ENFERMEIRA_cofen: campo que armazena o codigo da enfermeira que aplicou a vacina
+    fk_LOCALIDADE_id_localidade: campo que armazena o codigo da localidade onde foi aplicada a vacina
+    CONTATO: Tabela que armazena informações de contato de uma pessoa
+    ID_CONTATO: campo que armazena o codigo no sistema referente a um numero de telefone de uma pessoa
+    TIPO: campo que armazena o tipo de contato que se refere o registro
+    DESCRICAO: campo que armazena um numero contato de uma pessoa
+    fk_PESSOA_cpf: campo que armazena o CPF da pessoa dona do telefone de contato
 
 
 ### 6	MODELO LÓGICO<br>
@@ -74,6 +110,53 @@ Modelo Lógico baseado no Modelo Conceitual do projeto VaCard.<br>
 ### 7	MODELO FÍSICO<br>
         a) inclusão das instruções de criacão das estruturas em SQL/DDL 
         (criação de tabelas, alterações, etc..) 
+    create table PESSOA(
+    cpf int PRIMARY KEY,
+    nome varchar(50),
+    data_nasc date,
+    descricao_logradouro varchar(50),
+    numero_logradouro int,
+    bairro varchar(50),
+    cep int
+);
+
+create table ENFERMEIRA(
+    cofen int PRIMARY KEY,
+    nome varchar(50)
+);
+
+create table VACINA(
+    cod_vacina int PRIMARY KEY,
+    descricao varchar(50)
+);
+
+create table LOCALIDADE(
+    id_local int PRIMARY KEY,
+    descricao varchar(50)
+);
+
+create table VACINACAO(
+    id_aplicacao int PRIMARY KEY,
+    data_dose date,
+    num_dose int,
+    fk_PESSOA_cpf int,
+    fk_VACINA_cod_vac int,
+    fk_ENFERMEIRA_cofen int,
+    fk_LOCALIDADE_id_localidade int,
+
+    FOREIGN KEY(fk_PESSOA_cpf) REFERENCES PESSOA(cpf),
+    FOREIGN KEY(fk_VACINA_cod_vac) REFERENCES VACINA(cod_vacina),
+    FOREIGN KEY(fk_ENFERMEIRA_cofen) REFERENCES ENFERMEIRA(cofen),
+    FOREIGN KEY(fk_LOCALIDADE_id_localidade) REFERENCES LOCALIDADE(id_local)
+
+);
+create table CONTATO(
+    id_contato int PRIMARY KEY,
+    tipo varchar(30),
+    descricao integer,
+    fk_PESSOA_cpf,
+    FOREIGN KEY(fk_PESSOA_cpf) REFERENCES PESSOA(cpf)
+);
         
        
 ### 8	INSERT APLICADO NAS TABELAS DO BANCO DE DADOS<br>
@@ -82,11 +165,67 @@ Modelo Lógico baseado no Modelo Conceitual do projeto VaCard.<br>
         b) Criar um novo banco de dados para testar a restauracao 
         (em caso de falha na restauração o grupo não pontuará neste quesito)
         c) formato .SQL
+        insert into CONTATO (id_contato,tipo,descricao,fk_PESSOA_cpf) values 
+        ('1','celular','998677631','111'),
+        ('2','celular','998477631','222'),
+        ('3','celular','998577631','333'),
+        ('4','celular','998977631','444'),
+        ('5','celular','998177631','555'),
+        ('6','fixo','30604020','111'),
+        ('7','fixo','30614020','222'),
+        ('8','fixo','30624020','333'),
+        ('9','fixo','30634020','444'),
+        ('10','fixo','30644020','555');
+        insert into VACINACAO (data_dose,num_dose,id_aplicacao,fk_PESSOA_cpf,fk_VACINA_cod_vac,fk_ENFERMEIRA_cofen,fk_LOCALIDADE_id_LOCALIDADE) values ('2021-07-16','1','3','333','1','123','3');
+        insert into VACINACAO (data_dose,num_dose,id_aplicacao,fk_PESSOA_cpf,fk_VACINA_cod_vac,fk_ENFERMEIRA_cofen,fk_LOCALIDADE_id_LOCALIDADE) values ('2021-07-16','1','4','444','2','333','4');
+        insert into VACINACAO (data_dose,num_dose,id_aplicacao,fk_PESSOA_cpf,fk_VACINA_cod_vac,fk_ENFERMEIRA_cofen,fk_LOCALIDADE_id_LOCALIDADE) values ('2021-07-16','1','5','555','3','333','5');
+        insert into VACINACAO (data_dose,num_dose,id_aplicacao,fk_PESSOA_cpf,fk_VACINA_cod_vac,fk_ENFERMEIRA_cofen,fk_LOCALIDADE_id_LOCALIDADE) values ('2021-07-16','1','6','666','5','666','6');
+        insert into VACINACAO (data_dose,num_dose,id_aplicacao,fk_PESSOA_cpf,fk_VACINA_cod_vac,fk_ENFERMEIRA_cofen,fk_LOCALIDADE_id_LOCALIDADE) values ('2021-07-15','1','7','101','1','333','2');
+        insert into VACINACAO (data_dose,num_dose,id_aplicacao,fk_PESSOA_cpf,fk_VACINA_cod_vac,fk_ENFERMEIRA_cofen,fk_LOCALIDADE_id_LOCALIDADE) values ('2021-07-16','1','8','999','5','444','5');
+        insert into VACINACAO (data_dose,num_dose,id_aplicacao,fk_PESSOA_cpf,fk_VACINA_cod_vac,fk_ENFERMEIRA_cofen,fk_LOCALIDADE_id_LOCALIDADE) values ('2021-07-16','1','9','888','3','666','7');
+        insert into VACINACAO (data_dose,num_dose,id_aplicacao,fk_PESSOA_cpf,fk_VACINA_cod_vac,fk_ENFERMEIRA_cofen,fk_LOCALIDADE_id_LOCALIDADE) values ('2021-07-16','1','10','777','1','555','9');
+        insert into LOCALIDADE (id_local,descricao) values ('3','UBS Campinho da Serra');
+        insert into LOCALIDADE (id_local,descricao) values ('4','UBS Carapebus');
+        insert into LOCALIDADE (id_local,descricao) values ('5','UBS Campinho da Serra');
+        insert into LOCALIDADE (id_local,descricao) values ('6','UBS Manoel Plaza');
+        insert into LOCALIDADE (id_local,descricao) values ('7','UBS Manguinhos');
+        insert into LOCALIDADE (id_local,descricao) values ('8','Sao Marcos');
+        insert into LOCALIDADE (id_local,descricao) values ('9','UBS Oceania');
+        insert into VACINA (cod_vacina,descricao) values ('3','Pfizer');
+        insert into VACINA (cod_vacina,descricao) values ('4','Moderna');
+        insert into VACINA (cod_vacina,descricao) values ('5','Sputnik V');
+        insert into VACINA (cod_vacina,descricao) values ('6','Covishield');
+        insert into VACINA (cod_vacina,descricao) values ('7','Janssen');
+        insert into VACINA (cod_vacina,descricao) values ('8','Cansino');
+        insert into VACINA (cod_vacina,descricao) values ('9','Covaxin');
+        insert into VACINA (cod_vacina,descricao) values ('10','kovivac');
+        insert into ENFERMEIRA(cofen, nome) values ('333','Carlos André');
+        insert into ENFERMEIRA(cofen, nome) values ('444','Adriana Lima');
+        insert into ENFERMEIRA(cofen, nome) values ('555','Brenda Costa');
+        insert into ENFERMEIRA(cofen, nome) values ('666','Douglas Henrique');
+        insert into ENFERMEIRA(cofen, nome) values ('777','Izabella Campos');
+        insert into ENFERMEIRA(cofen, nome) values ('888','Tiago Pessoa');
+        insert into ENFERMEIRA(cofen, nome) values ('999','Geovana Pires');
+        insert into ENFERMEIRA(cofen, nome) values ('101','Geovane Ceolim');
+        insert into PESSOA (cpf,nome,data_nasc,descricao_logradouro,bairro,numero_logradouro,cep) values ('333','Miria Gomes','1981-02-16','Rua dos ipes','Santa luzia','301','29165757');
+        insert into PESSOA (cpf,nome,data_nasc,descricao_logradouro,bairro,numero_logradouro,cep) values ('444','Jonias de Paula','1956-11-01','Rua dos ipes','Santa luzia','301','29165757');
+        insert into PESSOA (cpf,nome,data_nasc,descricao_logradouro,bairro,numero_logradouro,cep) values ('555','Paulo Victor','1999-08-27','Rua dos ipes','Santa luzia','301','29165757');
+        insert into PESSOA (cpf,nome,data_nasc,descricao_logradouro,bairro,numero_logradouro,cep) values ('666','Izabella Campos','2000-05-25','Assembléia Estadual','Carapebus','256','12345678');
+        insert into PESSOA (cpf,nome,data_nasc,descricao_logradouro,bairro,numero_logradouro,cep) values ('777','Ana Clara Campos','2005-01-25','Assembléia Estadual','Carapebus','256','12345678');
+        insert into PESSOA (cpf,nome,data_nasc,descricao_logradouro,bairro,numero_logradouro,cep) values ('888','Elizangela Campos','1976-09-24','Assembléia Estadual','Carapebus','256','12345678');
+        insert into PESSOA (cpf,nome,data_nasc,descricao_logradouro,bairro,numero_logradouro,cep) values ('999','Jair Trarbach','1945-07-24','Assembléia Estadual','Carapebus','256','12345678');
+        insert into PESSOA (cpf,nome,data_nasc,descricao_logradouro,bairro,numero_logradouro,cep) values ('101','George Matheus','1994-08-19','Rua Rio Grande do Sul','José de Anchieta','334','12345678');
 
 
 ### 9	TABELAS E PRINCIPAIS CONSULTAS<br>
     OBS: Incluir para cada tópico as instruções SQL + imagens (print da tela) mostrando os resultados.<br>
 #### 9.1	CONSULTAS DAS TABELAS COM TODOS OS DADOS INSERIDOS (Todas) <br>
+    Select * from CONTATO
+    Select * from VACINA
+    Select * from LOCALIDADE
+    Select * from ENFERMEIRA 
+    Select * from PESSOA
+    Select * from VACINACAO
 
 ># Marco de Entrega 01: Do item 1 até o item 9.1<br>
 
