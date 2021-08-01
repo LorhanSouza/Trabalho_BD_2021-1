@@ -98,55 +98,54 @@ Modelo Lógico baseado no Modelo Conceitual do projeto VaCard.<br>
 ![Arquivo BrModelo do Modelo Lógico](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/arquivos/Logico_1.brM3?raw=true "BR Modelo Lógico")<br> 
 
 ### 7	MODELO FÍSICO<br>
-        a) inclusão das instruções de criacão das estruturas em SQL/DDL 
-        (criação de tabelas, alterações, etc..) 
+    
     create table PESSOA(
-    cpf int PRIMARY KEY,
-    nome varchar(50),
-    data_nasc date,
-    descricao_logradouro varchar(50),
-    numero_logradouro int,
-    bairro varchar(50),
-    cep int
-);
+      cpf int PRIMARY KEY,
+      nome varchar(50),
+      data_nasc date,
+      descricao_logradouro varchar(50),
+      numero_logradouro int,
+      bairro varchar(50),
+      cep int
+    );
 
-create table ENFERMEIRA(
-    cofen int PRIMARY KEY,
-    nome varchar(50)
-);
+     create table ENFERMEIRA(
+        cofen int PRIMARY KEY,
+        nome varchar(50)
+     );
 
-create table VACINA(
-    cod_vacina int PRIMARY KEY,
-    descricao varchar(50)
-);
+    create table VACINA(
+      cod_vacina int PRIMARY KEY,
+      descricao varchar(50)
+    );
 
-create table LOCALIDADE(
-    id_local int PRIMARY KEY,
-    descricao varchar(50)
-);
+    create table LOCALIDADE(
+      id_local int PRIMARY KEY,
+      descricao varchar(50)
+     );
 
-create table VACINACAO(
-    id_aplicacao int PRIMARY KEY,
-    data_dose date,
-    num_dose int,
-    fk_PESSOA_cpf int,
-    fk_VACINA_cod_vac int,
-    fk_ENFERMEIRA_cofen int,
-    fk_LOCALIDADE_id_localidade int,
+    create table VACINACAO(
+       id_aplicacao int PRIMARY KEY,
+       data_dose date,
+       num_dose int,
+       fk_PESSOA_cpf int,
+       fk_VACINA_cod_vac int,
+       fk_ENFERMEIRA_cofen int,
+       fk_LOCALIDADE_id_localidade int,
 
-    FOREIGN KEY(fk_PESSOA_cpf) REFERENCES PESSOA(cpf),
-    FOREIGN KEY(fk_VACINA_cod_vac) REFERENCES VACINA(cod_vacina),
-    FOREIGN KEY(fk_ENFERMEIRA_cofen) REFERENCES ENFERMEIRA(cofen),
-    FOREIGN KEY(fk_LOCALIDADE_id_localidade) REFERENCES LOCALIDADE(id_local)
-
-);
-create table CONTATO(
-    id_contato int PRIMARY KEY,
-    tipo varchar(30),
-    descricao integer,
-    fk_PESSOA_cpf,
-    FOREIGN KEY(fk_PESSOA_cpf) REFERENCES PESSOA(cpf)
-);
+       FOREIGN KEY(fk_PESSOA_cpf) REFERENCES PESSOA(cpf),
+       FOREIGN KEY(fk_VACINA_cod_vac) REFERENCES VACINA(cod_vacina),
+       FOREIGN KEY(fk_ENFERMEIRA_cofen) REFERENCES ENFERMEIRA(cofen),
+       FOREIGN KEY(fk_LOCALIDADE_id_localidade) REFERENCES LOCALIDADE(id_local)
+       );
+       
+    create table CONTATO(
+       id_contato int PRIMARY KEY,
+       tipo varchar(30),
+       descricao integer,
+       fk_PESSOA_cpf int,
+       FOREIGN KEY(fk_PESSOA_cpf) REFERENCES PESSOA(cpf)
+    );
         
        
 ### 8	INSERT APLICADO NAS TABELAS DO BANCO DE DADOS<br>
