@@ -5,7 +5,7 @@ Trabalho desenvolvido durante a disciplina de BD1 no semestre 2021/1
 
 ### 1. COMPONENTES<br>
 Integrantes do grupo<br>
-Matheus Henrique:email_primeiro_componente@dominio.com<br>
+Matheus Henrique:matheushenriquegv11@gmail.com<br>
 George Matheus:matheuss308@gmail.com<br>
 Lorhan Souza:lorhan.s160@gmail.com<br>
 
@@ -154,6 +154,19 @@ Modelo Lógico baseado no Modelo Conceitual do projeto VaCard.<br>
         b) Criar um novo banco de dados para testar a restauracao 
         (em caso de falha na restauração o grupo não pontuará neste quesito)
         c) formato .SQL
+        
+### Tabela PESSOA
+        insert into PESSOA (cpf,nome,data_nasc,descricao_logradouro,bairro,numero_logradouro,cep) values ('432','Mario Cesar','2000-06-23','Rua dos ipes','Santa luzia','301','29165757');
+        insert into PESSOA (cpf,nome,data_nasc,descricao_logradouro,bairro,numero_logradouro,cep) values ('123','Matheus','2000-06-23','Rua dos ipes','Santa luzia','301','29165757');
+        insert into PESSOA (cpf,nome,data_nasc,descricao_logradouro,bairro,numero_logradouro,cep) values ('333','Miria Gomes','1981-02-16','Rua dos ipes','Santa luzia','301','29165757');
+        insert into PESSOA (cpf,nome,data_nasc,descricao_logradouro,bairro,numero_logradouro,cep) values ('444','Jonias de Paula','1956-11-01','Rua dos ipes','Santa luzia','301','29165757');
+        insert into PESSOA (cpf,nome,data_nasc,descricao_logradouro,bairro,numero_logradouro,cep) values ('555','Paulo Victor','1999-08-27','Rua dos ipes','Santa luzia','301','29165757');
+        insert into PESSOA (cpf,nome,data_nasc,descricao_logradouro,bairro,numero_logradouro,cep) values ('666','Izabella Campos','2000-05-25','Assembléia Estadual','Carapebus','256','12345678');
+        insert into PESSOA (cpf,nome,data_nasc,descricao_logradouro,bairro,numero_logradouro,cep) values ('777','Ana Clara Campos','2005-01-25','Assembléia Estadual','Carapebus','256','12345678');
+        insert into PESSOA (cpf,nome,data_nasc,descricao_logradouro,bairro,numero_logradouro,cep) values ('888','Elizangela Campos','1976-09-24','Assembléia Estadual','Carapebus','256','12345678');
+        insert into PESSOA (cpf,nome,data_nasc,descricao_logradouro,bairro,numero_logradouro,cep) values ('999','Jair Trarbach','1945-07-24','Assembléia Estadual','Carapebus','256','12345678');
+        insert into PESSOA (cpf,nome,data_nasc,descricao_logradouro,bairro,numero_logradouro,cep) values ('101','George Matheus','1994-08-19','Rua Rio Grande do Sul','José de Anchieta','334','12345678');
+### Tabela CONTATO
         insert into CONTATO (id_contato,tipo,descricao,fk_PESSOA_cpf) values 
         ('1','celular','998677631','111'),
         ('2','celular','998477631','222'),
@@ -165,14 +178,9 @@ Modelo Lógico baseado no Modelo Conceitual do projeto VaCard.<br>
         ('8','fixo','30624020','333'),
         ('9','fixo','30634020','444'),
         ('10','fixo','30644020','555');
-        insert into VACINACAO (data_dose,num_dose,id_aplicacao,fk_PESSOA_cpf,fk_VACINA_cod_vac,fk_ENFERMEIRA_cofen,fk_LOCALIDADE_id_LOCALIDADE) values ('2021-07-16','1','3','333','1','123','3');
-        insert into VACINACAO (data_dose,num_dose,id_aplicacao,fk_PESSOA_cpf,fk_VACINA_cod_vac,fk_ENFERMEIRA_cofen,fk_LOCALIDADE_id_LOCALIDADE) values ('2021-07-16','1','4','444','2','333','4');
-        insert into VACINACAO (data_dose,num_dose,id_aplicacao,fk_PESSOA_cpf,fk_VACINA_cod_vac,fk_ENFERMEIRA_cofen,fk_LOCALIDADE_id_LOCALIDADE) values ('2021-07-16','1','5','555','3','333','5');
-        insert into VACINACAO (data_dose,num_dose,id_aplicacao,fk_PESSOA_cpf,fk_VACINA_cod_vac,fk_ENFERMEIRA_cofen,fk_LOCALIDADE_id_LOCALIDADE) values ('2021-07-16','1','6','666','5','666','6');
-        insert into VACINACAO (data_dose,num_dose,id_aplicacao,fk_PESSOA_cpf,fk_VACINA_cod_vac,fk_ENFERMEIRA_cofen,fk_LOCALIDADE_id_LOCALIDADE) values ('2021-07-15','1','7','101','1','333','2');
-        insert into VACINACAO (data_dose,num_dose,id_aplicacao,fk_PESSOA_cpf,fk_VACINA_cod_vac,fk_ENFERMEIRA_cofen,fk_LOCALIDADE_id_LOCALIDADE) values ('2021-07-16','1','8','999','5','444','5');
-        insert into VACINACAO (data_dose,num_dose,id_aplicacao,fk_PESSOA_cpf,fk_VACINA_cod_vac,fk_ENFERMEIRA_cofen,fk_LOCALIDADE_id_LOCALIDADE) values ('2021-07-16','1','9','888','3','666','7');
-        insert into VACINACAO (data_dose,num_dose,id_aplicacao,fk_PESSOA_cpf,fk_VACINA_cod_vac,fk_ENFERMEIRA_cofen,fk_LOCALIDADE_id_LOCALIDADE) values ('2021-07-16','1','10','777','1','555','9');
+### Tabela LOCALIDADE
+        insert into LOCALIDADE (id_local,descricao) values ('1','UBS carapina');
+        insert into LOCALIDADE (id_local,descricao) values ('2','UBS Serra');
         insert into LOCALIDADE (id_local,descricao) values ('3','UBS Campinho da Serra');
         insert into LOCALIDADE (id_local,descricao) values ('4','UBS Carapebus');
         insert into LOCALIDADE (id_local,descricao) values ('5','UBS Campinho da Serra');
@@ -180,6 +188,9 @@ Modelo Lógico baseado no Modelo Conceitual do projeto VaCard.<br>
         insert into LOCALIDADE (id_local,descricao) values ('7','UBS Manguinhos');
         insert into LOCALIDADE (id_local,descricao) values ('8','Sao Marcos');
         insert into LOCALIDADE (id_local,descricao) values ('9','UBS Oceania');
+### Tabela VACINA
+        insert into VACINA (cod_vacina,descricao) values ('1','Astrazeneca');
+        insert into VACINA (cod_vacina,descricao) values ('2','Coronavac');
         insert into VACINA (cod_vacina,descricao) values ('3','Pfizer');
         insert into VACINA (cod_vacina,descricao) values ('4','Moderna');
         insert into VACINA (cod_vacina,descricao) values ('5','Sputnik V');
@@ -188,6 +199,9 @@ Modelo Lógico baseado no Modelo Conceitual do projeto VaCard.<br>
         insert into VACINA (cod_vacina,descricao) values ('8','Cansino');
         insert into VACINA (cod_vacina,descricao) values ('9','Covaxin');
         insert into VACINA (cod_vacina,descricao) values ('10','kovivac');
+### Tabela ENFERMEIRA
+        insert into ENFERMEIRA (cofen, nome) values ('123','matheus');
+        insert into ENFERMEIRA(cofen, nome) values ('456','Giselda');
         insert into ENFERMEIRA(cofen, nome) values ('333','Carlos André');
         insert into ENFERMEIRA(cofen, nome) values ('444','Adriana Lima');
         insert into ENFERMEIRA(cofen, nome) values ('555','Brenda Costa');
@@ -196,16 +210,18 @@ Modelo Lógico baseado no Modelo Conceitual do projeto VaCard.<br>
         insert into ENFERMEIRA(cofen, nome) values ('888','Tiago Pessoa');
         insert into ENFERMEIRA(cofen, nome) values ('999','Geovana Pires');
         insert into ENFERMEIRA(cofen, nome) values ('101','Geovane Ceolim');
-        insert into PESSOA (cpf,nome,data_nasc,descricao_logradouro,bairro,numero_logradouro,cep) values ('333','Miria Gomes','1981-02-16','Rua dos ipes','Santa luzia','301','29165757');
-        insert into PESSOA (cpf,nome,data_nasc,descricao_logradouro,bairro,numero_logradouro,cep) values ('444','Jonias de Paula','1956-11-01','Rua dos ipes','Santa luzia','301','29165757');
-        insert into PESSOA (cpf,nome,data_nasc,descricao_logradouro,bairro,numero_logradouro,cep) values ('555','Paulo Victor','1999-08-27','Rua dos ipes','Santa luzia','301','29165757');
-        insert into PESSOA (cpf,nome,data_nasc,descricao_logradouro,bairro,numero_logradouro,cep) values ('666','Izabella Campos','2000-05-25','Assembléia Estadual','Carapebus','256','12345678');
-        insert into PESSOA (cpf,nome,data_nasc,descricao_logradouro,bairro,numero_logradouro,cep) values ('777','Ana Clara Campos','2005-01-25','Assembléia Estadual','Carapebus','256','12345678');
-        insert into PESSOA (cpf,nome,data_nasc,descricao_logradouro,bairro,numero_logradouro,cep) values ('888','Elizangela Campos','1976-09-24','Assembléia Estadual','Carapebus','256','12345678');
-        insert into PESSOA (cpf,nome,data_nasc,descricao_logradouro,bairro,numero_logradouro,cep) values ('999','Jair Trarbach','1945-07-24','Assembléia Estadual','Carapebus','256','12345678');
-        insert into PESSOA (cpf,nome,data_nasc,descricao_logradouro,bairro,numero_logradouro,cep) values ('101','George Matheus','1994-08-19','Rua Rio Grande do Sul','José de Anchieta','334','12345678');
-
-
+### Tabela VACINACAO
+        insert into VACINACAO (data_dose,num_dose,id_aplicacao) values ('2021-07-16','1','1');
+        insert into VACINACAO (data_dose,num_dose,id_aplicacao,fk_PESSOA_cpf,fk_VACINA_cod_vac,fk_ENFERMEIRA_cofen, fk_LOCALIDADE_id_LOCALIDADE) values ('2021-07-16','2','2','432','2','456', '2');
+        insert into VACINACAO (data_dose,num_dose,id_aplicacao,fk_PESSOA_cpf,fk_VACINA_cod_vac,fk_ENFERMEIRA_cofen,fk_LOCALIDADE_id_LOCALIDADE) values ('2021-07-16','1','3','333','1','123','3');
+        insert into VACINACAO (data_dose,num_dose,id_aplicacao,fk_PESSOA_cpf,fk_VACINA_cod_vac,fk_ENFERMEIRA_cofen,fk_LOCALIDADE_id_LOCALIDADE) values ('2021-07-16','1','4','444','2','333','4');
+        insert into VACINACAO (data_dose,num_dose,id_aplicacao,fk_PESSOA_cpf,fk_VACINA_cod_vac,fk_ENFERMEIRA_cofen,fk_LOCALIDADE_id_LOCALIDADE) values ('2021-07-16','1','5','555','3','333','5');
+        insert into VACINACAO (data_dose,num_dose,id_aplicacao,fk_PESSOA_cpf,fk_VACINA_cod_vac,fk_ENFERMEIRA_cofen,fk_LOCALIDADE_id_LOCALIDADE) values ('2021-07-16','1','6','666','5','666','6');
+        insert into VACINACAO (data_dose,num_dose,id_aplicacao,fk_PESSOA_cpf,fk_VACINA_cod_vac,fk_ENFERMEIRA_cofen,fk_LOCALIDADE_id_LOCALIDADE) values ('2021-07-15','1','7','101','1','333','2');
+        insert into VACINACAO (data_dose,num_dose,id_aplicacao,fk_PESSOA_cpf,fk_VACINA_cod_vac,fk_ENFERMEIRA_cofen,fk_LOCALIDADE_id_LOCALIDADE) values ('2021-07-16','1','8','999','5','444','5');
+        insert into VACINACAO (data_dose,num_dose,id_aplicacao,fk_PESSOA_cpf,fk_VACINA_cod_vac,fk_ENFERMEIRA_cofen,fk_LOCALIDADE_id_LOCALIDADE) values ('2021-07-16','1','9','888','3','666','7');
+        insert into VACINACAO (data_dose,num_dose,id_aplicacao,fk_PESSOA_cpf,fk_VACINA_cod_vac,fk_ENFERMEIRA_cofen,fk_LOCALIDADE_id_LOCALIDADE) values ('2021-07-16','1','10','777','1','555','9');
+        
 ### 9	TABELAS E PRINCIPAIS CONSULTAS<br>
     OBS: Incluir para cada tópico as instruções SQL + imagens (print da tela) mostrando os resultados.<br>
 #### 9.1	CONSULTAS DAS TABELAS COM TODOS OS DADOS INSERIDOS (Todas) <br>
