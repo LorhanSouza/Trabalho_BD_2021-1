@@ -221,6 +221,8 @@ create table CONTATO(
     OBS: Incluir para cada tópico as instruções SQL + imagens (print da tela) mostrando os resultados.<br>
 #### 9.1	CONSULTAS DAS TABELAS COM TODOS OS DADOS INSERIDOS (Todas) <br>
     Select * from CONTATO
+    ![select_todos_contato](https://user-images.githubusercontent.com/22622553/127775380-29c14225-45ab-4b09-aa0d-4626c2304aab.png)
+
     Select * from VACINA
     Select * from LOCALIDADE
     Select * from ENFERMEIRA 
