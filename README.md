@@ -218,23 +218,23 @@ create table CONTATO(
     
     Select * from VACINA;
     
- ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/select_todos_vacina.png?raw=true "Tabela Contato")<br>
+ ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/select_todos_vacina.png?raw=true "Tabela Vacina")<br>
 
     Select * from LOCALIDADE;
     
- ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/select_todos_localidade.png?raw=true "Tabela Contato")<br>
+ ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/select_todos_localidade.png?raw=true "Tabela Localidade")<br>
     
     Select * from ENFERMEIRA;
     
- ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/select_todos_enfermeira.png?raw=true "Tabela Contato")<br>
+ ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/select_todos_enfermeira.png?raw=true "Tabela Enfermeira")<br>
  
     Select * from PESSOA;
     
- ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/select_todos_pessoa.png?raw=true "Tabela Contato")<br>   
+ ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/select_todos_pessoa.png?raw=true "Tabela Pessoa")<br>   
     
     Select * from VACINACAO;
     
- ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/select_todos_vacinacao.png?raw=true "Tabela Contato")<br>   
+ ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/select_todos_vacinacao.png?raw=true "Tabela Vacinacao")<br>   
     
 
 ># Marco de Entrega 01: Do item 1 até o item 9.1<br>
