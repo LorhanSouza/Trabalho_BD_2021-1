@@ -44,7 +44,7 @@ Os principais relatórios gerados são:<br>
     a) Esta tabela deve conter todos os atributos do sistema e um mínimo de 10 linhas/registros de dados.
     b) Esta tabela tem a intenção de simular um relatório com todos os dados que serão armazenados 
     
-![Exemplo de Tabela de dados da Empresa Devcom](https://github.com/discipbd1/trab01/blob/master/arquivos/TabelaEmpresaDevCom_sample.xlsx?raw=true "Tabela - Empresa Devcom")
+![Simulação dos dados armazenados](https://github.com/discipbd1/trab01/blob/master/arquivos/TabelaSistemaVaCard_sample.xlsx?raw=true "Tabela - VaCard")
     
     
 ### 5.MODELO CONCEITUAL<br>  
