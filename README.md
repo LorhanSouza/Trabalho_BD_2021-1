@@ -122,7 +122,7 @@ Modelo Lógico baseado no Modelo Conceitual do projeto VaCard.<br>
     create table LOCALIDADE(
       id_local int PRIMARY KEY,
       descricao varchar(50)
-     );
+    );
 
     create table VACINACAO(
        id_aplicacao int PRIMARY KEY,
@@ -137,7 +137,7 @@ Modelo Lógico baseado no Modelo Conceitual do projeto VaCard.<br>
        FOREIGN KEY(fk_VACINA_cod_vac) REFERENCES VACINA(cod_vacina),
        FOREIGN KEY(fk_ENFERMEIRA_cofen) REFERENCES ENFERMEIRA(cofen),
        FOREIGN KEY(fk_LOCALIDADE_id_localidade) REFERENCES LOCALIDADE(id_local)
-       );
+     );
        
     create table CONTATO(
        id_contato int PRIMARY KEY,
