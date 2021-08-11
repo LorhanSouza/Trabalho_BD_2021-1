@@ -223,7 +223,6 @@ Modelo Lógico baseado no Modelo Conceitual do projeto VaCard.<br>
         insert into VACINACAO (data_dose,num_dose,id_aplicacao,fk_PESSOA_cpf,fk_VACINA_cod_vac,fk_ENFERMEIRA_cofen,fk_LOCALIDADE_id_LOCALIDADE) values ('2021-07-16','1','10','777','1','555','9');
         
 ### 9	TABELAS E PRINCIPAIS CONSULTAS<br>
-    OBS: Incluir para cada tópico as instruções SQL + imagens (print da tela) mostrando os resultados.<br>
 #### 9.1	CONSULTAS DAS TABELAS COM TODOS OS DADOS INSERIDOS (Todas) <br>
     Select * from CONTATO;
  
@@ -253,18 +252,54 @@ Modelo Lógico baseado no Modelo Conceitual do projeto VaCard.<br>
 ># Marco de Entrega 01: Do item 1 até o item 9.1<br>
 
 #### 9.2	CONSULTAS DAS TABELAS COM FILTROS WHERE (Mínimo 4)<br>
+    select * from vacinacao where num_dose=2;
+    select * from pessoa where cpf=123;
+    select * from contato where tipo='celular';
+    select * from enfermeira where nome='matheus';
+    select * from pessoa where bairro='Santa luzia';
 #### 9.3	CONSULTAS QUE USAM OPERADORES LÓGICOS, ARITMÉTICOS E TABELAS OU CAMPOS RENOMEADOS (Mínimo 11)
-    a) Criar 5 consultas que envolvam os operadores lógicos AND, OR e Not
-    b) Criar no mínimo 3 consultas com operadores aritméticos 
-    c) Criar no mínimo 3 consultas com operação de renomear nomes de campos ou tabelas
+a) Criar 5 consultas que envolvam os operadores lógicos AND, OR e Not<br>
+
+    select * from vacinacao where fk_enfermeira_cofen=333 and num_dose=1
+    select * from contato where 1=1 and not tipo = 'fixo'
+    select * from vacinacao where fk_vacina_cod_vac =1 or fk_vacina_cod_vac =2
+    select * from pessoa where numero_logradouro = 301 and bairro= 'Santa luzia'
+    select * from vacinacao where data_dose > '2021-07-15' and fk_localidade_id_localidade = 4
+
+b) Criar no mínimo 3 consultas com operadores aritméticos<br>
+
+c) Criar no mínimo 3 consultas com operação de renomear nomes de campos ou tabelas
+
+    select cpf,nome, descricao_logradouro as rua , numero_logradouro as numero from pessoa
+    select fk_pessoa_cpf, descricao as numero, tipo from contato 
+    select descricao as nome_vacina from vacina
 
 #### 9.4	CONSULTAS QUE USAM OPERADORES LIKE E DATAS (Mínimo 12) <br>
-    a) Criar outras 5 consultas que envolvam like ou ilike
-    b) Criar uma consulta para cada tipo de função data apresentada.
+a) Criar outras 5 consultas que envolvam like ou ilike
+
+    select * from pessoa where nome like '%clara%'
+    select * from pessoa where bairro like 'C%'
+    select * from pessoa where bairro like 'C%' 
+    select * from pessoa where nome like '%Campos'
+    select * from localidade where descricao not like 'UBS%' 
+ 
+b) Criar uma consulta para cada tipo de função data apresentada.
+
+    select * from vacinacao where data_dose > '2021-07-15'
+    select * from pessoa where data_nasc > '1999-12-31'
 
 #### 9.5	INSTRUÇÕES APLICANDO ATUALIZAÇÃO E EXCLUSÃO DE DADOS (Mínimo 6)<br>
-    a) Criar minimo 3 de exclusão
-    b) Criar minimo 3 de atualização
+a) Criar minimo 3 de exclusão
+
+    delete from contato where fk_pessoa_cpf = 999 
+    delete from enfermeira where cofen = 101
+    delete from localidade where id_local = 8
+
+b) Criar minimo 3 de atualização
+
+    update pessoa set numero_logradouro = 55 where bairro = 'Carapebus' and descricao_logradouro ilike 'Assemblé%'
+    update contato set descricao = 998416953 where id_contato = 1
+    update vacina set descricao = 'KoviVac' where cod_vacina = 10
 
 #### 9.6	CONSULTAS COM INNER JOIN E ORDER BY (Mínimo 6)<br>
     a) Uma junção que envolva todas as tabelas possuindo no mínimo 2 registros no resultado
