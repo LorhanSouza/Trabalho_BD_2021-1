@@ -161,6 +161,8 @@ Modelo Lógico baseado no Modelo Conceitual do projeto VaCard.<br>
        
 ### 8	INSERT APLICADO NAS TABELAS DO BANCO DE DADOS<br>
     Arquivo .SQL com drop das tabelas caso elas existam, criação de todas as tabelas e inserção de todas as informações.
+   ![Arquivo BrModelo do Modelo Lógico](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/arquivos/vaCard.sql?raw=true "Vacard SQL")<br> 
+    
         
         
 ### Tabela PESSOA
