@@ -99,6 +99,15 @@ Modelo Lógico baseado no Modelo Conceitual do projeto VaCard.<br>
 
 ### 7	MODELO FÍSICO<br>
     
+    /*Exclusão das tabelas caso elas existam*/
+
+    drop table if exists ENFERMEIRA cascade;
+    drop table if exists PESSOA cascade;
+    drop table if exists VACINA cascade;
+    drop table if exists LOCALIDADE cascade;
+    drop table if exists VACINACAO cascade;
+    drop table if exists CONTATO cascade;
+    
     /* Criação das tabelas */
     
     create table PESSOA(
@@ -151,11 +160,8 @@ Modelo Lógico baseado no Modelo Conceitual do projeto VaCard.<br>
         
        
 ### 8	INSERT APLICADO NAS TABELAS DO BANCO DE DADOS<br>
-        a) inclusão das instruções de inserção dos dados nas tabelas criadas pelo script de modelo físico
-        (Drop para exclusão de tabelas + create definição de para tabelas e estruturas de dados + insert para dados a serem inseridos)
-        b) Criar um novo banco de dados para testar a restauracao 
-        (em caso de falha na restauração o grupo não pontuará neste quesito)
-        c) formato .SQL
+    Arquivo .SQL com drop das tabelas caso elas existam, criação de todas as tabelas e inserção de todas as informações.
+        
         
 ### Tabela PESSOA
     insert into PESSOA (cpf,nome,data_nasc,descricao_logradouro,bairro,numero_logradouro,cep) values (1111,'Marcos Guilherme','2000-06-23','Rua das Palmeiras','Cidade Pomar',301,29165562);
