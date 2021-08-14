@@ -263,11 +263,30 @@ Modelo Lógico baseado no Modelo Conceitual do projeto VaCard.<br>
 ># Marco de Entrega 01: Do item 1 até o item 9.1<br>
 
 #### 9.2	CONSULTAS DAS TABELAS COM FILTROS WHERE (Mínimo 4)<br>
-    select * from vacinacao where num_dose=2;
-    select * from pessoa where cpf=123;
+    select * from vacinacao where num_dose=1;
+    
+   ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/primeira_dose.png?raw=true "Tabela Vacinacao")<br>
+    
+    
+    select * from pessoa where cpf=2222;
+    
+   ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/select_cpf.png?raw=true "Tabela Vacinacao")<br>
+    
     select * from contato where tipo='celular';
-    select * from enfermeira where nome='matheus';
-    select * from pessoa where bairro='Santa luzia';
+    
+   ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/select_contato.png?raw=true "Tabela Vacinacao")<br>
+   
+  
+    select * from enfermeira where nome='Izabella Campos';
+    
+   ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/select_enfermeira.png?raw=true "Tabela Vacinacao")<br>
+   
+   
+    select * from pessoa where bairro='Carapebus';
+    
+   ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/select_bairro.png?raw=true "Tabela Vacinacao")<br>
+   
+   
 #### 9.3	CONSULTAS QUE USAM OPERADORES LÓGICOS, ARITMÉTICOS E TABELAS OU CAMPOS RENOMEADOS (Mínimo 11)
 a) Criar 5 consultas que envolvam os operadores lógicos AND, OR e Not<br>
 
