@@ -189,27 +189,27 @@ Modelo Lógico baseado no Modelo Conceitual do projeto VaCard.<br>
     ('fixo','30634020',9999),
     ('fixo','30644020',1001);
 ### Tabela LOCALIDADE
-    insert into LOCALIDADE (descricao) values ('UBS Carapina');
-    insert into LOCALIDADE (descricao) values ('URS Feu Rosa');
-    insert into LOCALIDADE (descricao) values ('UBS Campinho da Serra');
-    insert into LOCALIDADE (descricao) values ('UBS Carapebus');
-    insert into LOCALIDADE (descricao) values ('UBS Oceania');
-    insert into LOCALIDADE (descricao) values ('UBS Manoel Plaza');
-    insert into LOCALIDADE (descricao) values ('UBS Manguinhos');
-    insert into LOCALIDADE (descricao) values ('URS Jacaraipe');
-    insert into LOCALIDADE (descricao) values ('URS Boa Vista');
-    insert into LOCALIDADE (descricao) values ('UBS Serra Dourada');
+    insert into LOCALIDADE (descricao) values ('UBS Carapina'),
+    ('URS Feu Rosa'),
+    ('UBS Campinho da Serra'),
+    ('UBS Carapebus'),
+    ('UBS Oceania'),
+    ('UBS Manoel Plaza'),
+    ('UBS Manguinhos'),
+    ('URS Jacaraipe'),
+    ('URS Boa Vista'),
+    ('UBS Serra Dourada');
 ### Tabela VACINA
-    insert into VACINA (descricao) values ('Astrazeneca');
-    insert into VACINA (descricao) values ('Coronavac');
-    insert into VACINA (descricao) values ('Pfizer');
-    insert into VACINA (descricao) values ('Moderna');
-    insert into VACINA (descricao) values ('Sputnik V');
-    insert into VACINA (descricao) values ('Covishield');
-    insert into VACINA (descricao) values ('Janssen');
-    insert into VACINA (descricao) values ('Cansino');
-    insert into VACINA (descricao) values ('Covaxin');
-    insert into VACINA (descricao) values ('kovivac');
+    insert into VACINA (descricao) values ('Astrazeneca'),
+    ('Coronavac'),
+    ('Pfizer'),
+    ('Moderna'),
+    ('Sputnik V'),
+    ('Covishield'),
+    ('Janssen'),
+    ('Cansino'),
+    ('Covaxin'),
+    ('kovivac');
 ### Tabela ENFERMEIRA
     insert into ENFERMEIRA(cofen, nome) values (1101,'Brenda Lemos');
     insert into ENFERMEIRA(cofen, nome) values (2020,'Giselda Marques');
@@ -288,33 +288,42 @@ Modelo Lógico baseado no Modelo Conceitual do projeto VaCard.<br>
    
    
 #### 9.3	CONSULTAS QUE USAM OPERADORES LÓGICOS, ARITMÉTICOS E TABELAS OU CAMPOS RENOMEADOS (Mínimo 11)
-a) Criar 5 consultas que envolvam os operadores lógicos AND, OR e Not<br>
 
     select * from vacinacao where fk_enfermeira_cofen=333 and num_dose=1
     select * from contato where 1=1 and not tipo = 'fixo'
     select * from vacinacao where fk_vacina_cod_vac =1 or fk_vacina_cod_vac =2
     select * from pessoa where numero_logradouro = 301 and bairro= 'Santa luzia'
     select * from vacinacao where data_dose > '2021-07-15' and fk_localidade_id_localidade = 4
-
-b) Criar no mínimo 3 consultas com operadores aritméticos<br>
-
-c) Criar no mínimo 3 consultas com operação de renomear nomes de campos ou tabelas
-
+    select * from vacina where cod_vacina % 2 =1
+    select * from pessoa where bairro = 'Carapebus' and numero_logradouro > 10
+    select * from vacinacao where num_dose=1 and fk_enfermeira_cofen=2020
     select cpf,nome, descricao_logradouro as rua , numero_logradouro as numero from pessoa
     select fk_pessoa_cpf, descricao as numero, tipo from contato 
     select descricao as nome_vacina from vacina
 
 #### 9.4	CONSULTAS QUE USAM OPERADORES LIKE E DATAS (Mínimo 12) <br>
-a) Criar outras 5 consultas que envolvam like ou ilike
 
     select * from pessoa where nome like '%clara%'
-    select * from pessoa where bairro like 'C%'
-    select * from pessoa where bairro like 'C%' 
+    select * from pessoa where bairro like 'c%'
+    select * from pessoa where bairro ilike 'c%' 
     select * from pessoa where nome like '%Campos'
-    select * from localidade where descricao not like 'UBS%' 
- 
-b) Criar uma consulta para cada tipo de função data apresentada.
+    select * from localidade where descricao not like 'UBS%'
+    select * from contato where tipo ilike 'Fixo'
+    select nome,cofen from enfermeira where nome ilike 'a%'
+    select * from vacina where descricao ilike 'C%'
+    
+    select id_aplicacao, num_dose, nome, date_part('year',(age(current_date,pessoa.data_nasc))) as idade
+    from vacinacao 
+    inner join pessoa
+    on (vacinacao.fk_pessoa_cpf=pessoa.cpf)
+    where num_dose=1
 
+    select id_aplicacao, num_dose, nome, date_part('year',(age(current_date,pessoa.data_nasc))) as idade
+    from vacinacao 
+    inner join pessoa
+    on (vacinacao.fk_pessoa_cpf=pessoa.cpf)
+    where num_dose=2
+    
     select * from vacinacao where data_dose > '2021-07-15'
     select * from pessoa where data_nasc > '1999-12-31'
 
@@ -332,8 +341,62 @@ b) Criar minimo 3 de atualização
     update vacina set descricao = 'KoviVac' where cod_vacina = 10
 
 #### 9.6	CONSULTAS COM INNER JOIN E ORDER BY (Mínimo 6)<br>
-    a) Uma junção que envolva todas as tabelas possuindo no mínimo 2 registros no resultado
-    b) Outras junções que o grupo considere como sendo as de principal importância para o trabalho
+    select id_aplicacao as id, data_dose as data, num_dose as dose, pessoa.nome as vacinante,localidade.descricao as local, vacina.descricao as nome_vacina, 
+    enfermeira.nome as aplicante, contato.descricao as celular
+    from vacinacao 
+    inner join pessoa 
+    on (vacinacao.fk_pessoa_cpf=pessoa.cpf) 
+    inner join localidade 
+    on (vacinacao.fk_localidade_id_localidade=localidade.id_local) 
+    inner join vacina
+    on (vacinacao.fk_vacina_cod_vac=vacina.cod_vacina)
+    inner join enfermeira
+    on (vacinacao.fk_enfermeira_cofen=enfermeira.cofen)
+    inner join contato 
+    on (vacinacao.fk_pessoa_cpf=contato.fk_pessoa_cpf ) where contato.tipo = 'celular'
+    group by id_aplicacao,pessoa.nome,localidade.descricao ,vacina.descricao,enfermeira.nome,contato.descricao 
+    order by id	
+    
+    select id_aplicacao as id, pessoa.nome as vacinante, num_dose as dose 
+    from vacinacao 
+    inner join pessoa 
+    on ( vacinacao.fk_pessoa_cpf=pessoa.cpf) 
+    where num_dose=1
+    order by id
+
+    select id_aplicacao as id, pessoa.nome as vacinante, num_dose as dose 
+    from vacinacao 
+    inner join pessoa 
+    on ( vacinacao.fk_pessoa_cpf=pessoa.cpf) 
+    where num_dose=2
+    order by id
+
+    select id_aplicacao as id, num_dose as dose , localidade.descricao as local,pessoa.nome as nome
+    from vacinacao 
+    inner join localidade 
+    on (localidade.id_local =vacinacao.fk_localidade_id_localidade) 
+    inner join pessoa
+    on ( vacinacao.fk_pessoa_cpf=pessoa.cpf)
+    order by id
+
+    select id_aplicacao as id, num_dose as dose , enfermeira.nome as enferm ,pessoa.nome as nome
+    from vacinacao 
+    inner join enfermeira
+    on (enfermeira.cofen =vacinacao.fk_enfermeira_cofen) 
+    inner join pessoa
+    on ( vacinacao.fk_pessoa_cpf=pessoa.cpf)
+    where num_dose=1
+    order by id
+
+    select id_aplicacao as id, num_dose as dose , enfermeira.nome as enferm ,pessoa.nome as nome
+    from vacinacao 
+    inner join enfermeira
+    on (enfermeira.cofen =vacinacao.fk_enfermeira_cofen) 
+    inner join pessoa
+    on ( vacinacao.fk_pessoa_cpf=pessoa.cpf)
+    where num_dose=2
+    order by id
+
 
 #### 9.7	CONSULTAS COM GROUP BY E FUNÇÕES DE AGRUPAMENTO (Mínimo 6)<br>
     a) Criar minimo 2 envolvendo algum tipo de junção
