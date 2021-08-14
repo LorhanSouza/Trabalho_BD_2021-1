@@ -434,6 +434,12 @@ b) Criar minimo 3 de atualização
     on (vacina.cod_vacina =vacinacao.fk_vacina_cod_vac )
     group by vacina.descricao 
     order by qtd_vacina desc
+    
+    select count(bairro) as quantidade_cad_bairro , bairro as cadastros_por_bairro 
+    from pessoa 
+    group by bairro 
+    order by quantidade_cad_bairro desc
+
 
 #### 9.8	CONSULTAS COM LEFT, RIGHT E FULL JOIN (Mínimo 4)<br>
 
