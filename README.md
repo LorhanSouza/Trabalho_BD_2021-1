@@ -503,6 +503,18 @@ b) Criar minimo 3 de atualização
     where num_dose=2
     group by data_nasc
 
+    create view SegundaDose as 
+    select count(num_dose) as quantidade_2_dose
+    from vacinacao 
+    where num_dose=2
+    group by num_dose
+
+    create view PrimeiraDose as 
+    select count(num_dose) as quantidade_1_dose
+    from vacinacao 
+    where num_dose=1
+    group by num_dose
+    
 #### 9.10	SUBCONSULTAS (Mínimo 4)<br>
      a) Criar minimo 1 envolvendo GROUP BY
      b) Criar minimo 1 envolvendo algum tipo de junção
