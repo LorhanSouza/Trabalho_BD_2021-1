@@ -466,8 +466,42 @@ b) Criar minimo 3 de atualização
     order by cod_aplicacao
 
 #### 9.9	CONSULTAS COM SELF JOIN E VIEW (Mínimo 6)<br>
-        a) Uma junção que envolva Self Join (caso não ocorra na base justificar e substituir por uma view)
-        b) Outras junções com views que o grupo considere como sendo de relevante importância para o trabalho
+    select vacina1.data_dose as data_primeira_dose, vacina2.data_dose as data_segunda_dose , pessoa.nome
+    from
+    vacinacao as vacina1
+    inner join
+    vacinacao as vacina2
+    on (vacina1.fk_pessoa_cpf = vacina2.fk_pessoa_cpf and vacina1.num_dose=1 and vacina2.num_dose=2)
+    inner join pessoa
+    on (vacina1.fk_pessoa_cpf=pessoa.cpf)
+
+    create view FaixaEtária_Primeira_dose as 
+    select case when date_part('year',(age(current_date,data_nasc))) <= 20 then 'ate 20'  
+         when date_part('year',(age(current_date,data_nasc)))  between 21 and 30 then 'de 21 a 30'  
+         when  date_part('year',(age(current_date,data_nasc)))  between 31 and 40 then 'de 31 a 40'
+	 when  date_part('year',(age(current_date,data_nasc)))  between 41 and 50 then  'de 41 a 50'
+	 when  date_part('year',(age(current_date,data_nasc)))  between 51 and 60 then 'de 51 a 60'
+	 when  date_part('year',(age(current_date,data_nasc)))  >= 61 then 'acima de 60'
+	 end as faixa_idade , count(data_nasc)
+    from pessoa
+    inner join vacinacao 
+    on (pessoa.cpf = vacinacao.fk_pessoa_cpf)
+    where num_dose=1
+    group by data_nasc
+
+    create view FaixaEtária_Segunda_dose as 
+    select case when date_part('year',(age(current_date,data_nasc))) <= 20 then 'ate 20'  
+         when date_part('year',(age(current_date,data_nasc)))  between 21 and 30 then 'de 21 a 30'  
+         when  date_part('year',(age(current_date,data_nasc)))  between 31 and 40 then 'de 31 a 40'
+	 when  date_part('year',(age(current_date,data_nasc)))  between 41 and 50 then  'de 41 a 50'
+	 when  date_part('year',(age(current_date,data_nasc)))  between 51 and 60 then 'de 51 a 60'
+	 when  date_part('year',(age(current_date,data_nasc)))  >= 61 then 'acima de 60'
+	 end as faixa_idade , count(data_nasc)
+    from pessoa
+    inner join vacinacao 
+    on (pessoa.cpf = vacinacao.fk_pessoa_cpf)
+    where num_dose=2
+    group by data_nasc
 
 #### 9.10	SUBCONSULTAS (Mínimo 4)<br>
      a) Criar minimo 1 envolvendo GROUP BY
