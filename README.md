@@ -515,6 +515,12 @@ b) Criar minimo 3 de atualização
     where num_dose=1
     group by num_dose
     
+    create view Aplicacoes as
+    select id_aplicacao as id,fk_pessoa_cpf as cpf_vacinante, enfermeira.nome as aplicante,  data_dose , num_dose as qual_dose from vacinacao 
+    right join enfermeira on
+    (vacinacao.fk_enfermeira_cofen=enfermeira.cofen)
+    order by id_aplicacao 
+    
 #### 9.10	SUBCONSULTAS (Mínimo 4)<br>
      a) Criar minimo 1 envolvendo GROUP BY
      b) Criar minimo 1 envolvendo algum tipo de junção
