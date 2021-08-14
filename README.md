@@ -339,6 +339,7 @@ b) Criar minimo 3 de atualização
     update pessoa set numero_logradouro = 256 where bairro = 'Carapebus' and descricao_logradouro ilike 'Assemblé%'
     update contato set descricao = 998416953 where id_contato = 1
     update vacina set descricao = 'KoviVac' where cod_vacina = 10
+    update pessoa set data_nasc= '2001-01-25' where cpf = 7777 
 
 #### 9.6	CONSULTAS COM INNER JOIN E ORDER BY (Mínimo 6)<br>
     select id_aplicacao as id, data_dose as data, num_dose as dose, pessoa.nome as vacinante,localidade.descricao as local, vacina.descricao as nome_vacina, 
