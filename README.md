@@ -420,6 +420,20 @@ b) Criar minimo 3 de atualização
     on (vacinacao.fk_pessoa_cpf=pessoa.cpf)
     where num_dose=2
     group by num_dose,pessoa.bairro
+    
+    select count(fk_localidade_id_localidade) as qtd_local ,localidade.descricao as local 
+    from vacinacao 
+    inner join localidade
+    on (localidade.id_local = vacinacao.fk_localidade_id_localidade ) 
+    group by localidade.descricao 
+    order by qtd_local desc
+
+    select count(fk_vacina_cod_vac) as qtd_vacina ,vacina.descricao as vacina
+    from vacinacao 
+    inner join vacina
+    on (vacina.cod_vacina =vacinacao.fk_vacina_cod_vac )
+    group by vacina.descricao 
+    order by qtd_vacina desc
 
 #### 9.8	CONSULTAS COM LEFT, RIGHT E FULL JOIN (Mínimo 4)<br>
 
