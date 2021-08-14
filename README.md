@@ -336,7 +336,7 @@ a) Criar minimo 3 de exclusão
 
 b) Criar minimo 3 de atualização
 
-    update pessoa set numero_logradouro = 55 where bairro = 'Carapebus' and descricao_logradouro ilike 'Assemblé%'
+    update pessoa set numero_logradouro = 256 where bairro = 'Carapebus' and descricao_logradouro ilike 'Assemblé%'
     update contato set descricao = 998416953 where id_contato = 1
     update vacina set descricao = 'KoviVac' where cod_vacina = 10
 
