@@ -399,10 +399,50 @@ b) Criar minimo 3 de atualização
 
 
 #### 9.7	CONSULTAS COM GROUP BY E FUNÇÕES DE AGRUPAMENTO (Mínimo 6)<br>
-    a) Criar minimo 2 envolvendo algum tipo de junção
+
+    select count(fk_enfermeira_cofen) as qtd_aplicacao ,enfermeira.nome as nome 
+    from vacinacao 
+    inner join enfermeira 
+    on (vacinacao.fk_enfermeira_cofen = enfermeira.cofen ) 
+    group by enfermeira.cofen 
+    order by qtd_vacinou desc
+
+    select count(num_dose) as quantidade_1_dose , pessoa.bairro 
+    from vacinacao 
+    inner join pessoa 
+    on (vacinacao.fk_pessoa_cpf=pessoa.cpf)
+    where num_dose=1
+    group by num_dose,pessoa.bairro
+
+    select count(num_dose) as quantidade_2_dose , pessoa.bairro 
+    from vacinacao 
+    inner join pessoa 
+    on (vacinacao.fk_pessoa_cpf=pessoa.cpf)
+    where num_dose=2
+    group by num_dose,pessoa.bairro
 
 #### 9.8	CONSULTAS COM LEFT, RIGHT E FULL JOIN (Mínimo 4)<br>
-    a) Criar minimo 1 de cada tipo
+
+    select descricao,tipo , pessoa.nome as dono 
+    from contato 
+    right join pessoa 
+    on (pessoa.cpf=contato.fk_pessoa_cpf)
+    
+    select descricao,tipo , pessoa.nome as dono 
+    from contato 
+    left join pessoa 
+    on (pessoa.cpf=contato.fk_pessoa_cpf)
+    
+    select nome, bairro,descricao_logradouro as nome_logradouro ,numero_logradouro as num_casa, contato.descricao as numero 
+    from pessoa 
+    full join contato 
+    on (pessoa.cpf=contato.fk_pessoa_cpf) 
+    
+    select nome, cpf, vacinacao.id_aplicacao as cod_aplicacao,vacinacao.num_dose 
+    from pessoa 
+    full join vacinacao 
+    on (pessoa.cpf=vacinacao.fk_pessoa_cpf)
+    order by cod_aplicacao
 
 #### 9.9	CONSULTAS COM SELF JOIN E VIEW (Mínimo 6)<br>
         a) Uma junção que envolva Self Join (caso não ocorra na base justificar e substituir por uma view)
