@@ -290,16 +290,48 @@ Modelo Lógico baseado no Modelo Conceitual do projeto VaCard.<br>
 #### 9.3	CONSULTAS QUE USAM OPERADORES LÓGICOS, ARITMÉTICOS E TABELAS OU CAMPOS RENOMEADOS (Mínimo 11)
 
     select * from vacinacao where fk_enfermeira_cofen=3030 and num_dose=1;
+   
+   ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.3/Screenshot_1.png?raw=true "Tabela Pessoa")<br>
+   
     select * from contato where 1=1 and not tipo = 'fixo';
+    
+   ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.3/Screenshot_2.png?raw=true "Tabela Pessoa")<br>
+    
     select * from vacinacao where fk_vacina_cod_vac =1 or fk_vacina_cod_vac =2;
+   
+   ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.3/Screenshot_3.png?raw=true "Tabela Pessoa")<br>
+   
     select * from pessoa where numero_logradouro = 256 and bairro= 'Carapebus';
+   
+   ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.3/Screenshot_4.png?raw=true "Tabela Pessoa")<br> 
+   
     select * from vacinacao where data_dose > '2021-07-15' and fk_localidade_id_localidade = 2;
+    
+   ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.3/Screenshot_5.png?raw=true "Tabela Pessoa")<br> 
+    
     select * from vacina where cod_vacina % 2 =1;
+    
+   ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.3/Screenshot_6.png?raw=true "Tabela Pessoa")<br> 
+    
     select * from pessoa where bairro = 'Carapebus' and numero_logradouro >= 10;
+    
+   ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.3/Screenshot_7.png?raw=true "Tabela Pessoa")<br> 
+
     select * from vacinacao where num_dose=1 and fk_enfermeira_cofen=2020;
+    
+   ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.3/Screenshot_8.png?raw=true "Tabela Pessoa")<br> 
+
     select cpf,nome, descricao_logradouro as rua , numero_logradouro as numero from pessoa;
-    select fk_pessoa_cpf, descricao as numero, tipo from contato; 
+   
+   ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.3/Screenshot_9.png?raw=true "Tabela Pessoa")<br> 
+   
+    select fk_pessoa_cpf, descricao as numero, tipo from contato;
+    
+   ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.3/Screenshot_10.png?raw=true "Tabela Pessoa")<br> 
+    
     select descricao as nome_vacina from vacina;
+    
+   ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.3/Screenshot_11.png?raw=true "Tabela Pessoa")<br> 
 
 #### 9.4	CONSULTAS QUE USAM OPERADORES LIKE E DATAS (Mínimo 12) <br>
 
