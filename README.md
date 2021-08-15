@@ -303,37 +303,37 @@ Modelo Lógico baseado no Modelo Conceitual do projeto VaCard.<br>
 
 #### 9.4	CONSULTAS QUE USAM OPERADORES LIKE E DATAS (Mínimo 12) <br>
 
-    select * from pessoa where nome like '%Clara%'
+    select * from pessoa where nome like '%Clara%';
     
    ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.4/Screenshot_1.png?raw=true "Tabela Pessoa")<br>
     
-    select * from pessoa where bairro like 'c%'
+    select * from pessoa where bairro like 'c%';
     
    ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.4/Screenshot_2.png?raw=true "Tabela Pessoa")<br>
     
-    select * from pessoa where bairro ilike 'c%'
+    select * from pessoa where bairro ilike 'c%';
     
    ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.4/Screenshot_3.png?raw=true "Tabela Pessoa")<br>
    
-    select * from pessoa where nome like '%Campos'
+    select * from pessoa where nome like '%Campos';
     
    ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.4/Screenshot_4.png?raw=true "Tabela Pessoa")<br>
    
    
-    select * from localidade where descricao not like 'UBS%'
+    select * from localidade where descricao not like 'UBS%';
    
    ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.4/Screenshot_5.png?raw=true "Tabela localidade")<br>
    
-    select * from contato where tipo ilike 'Fixo'
+    select * from contato where tipo ilike 'Fixo';
     
    ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.4/Screenshot_6.png?raw=true "Tabela contato")<br>
    
    
-    select nome,cofen from enfermeira where nome ilike 'a%'
+    select nome,cofen from enfermeira where nome ilike 'a%';
     
    ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.4/Screenshot_7.png?raw=true "Tabela enfermeira")<br>
    
-    select * from vacina where descricao ilike 'C%'
+    select * from vacina where descricao ilike 'C%';
     
    ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.4/Screenshot_8.png?raw=true "Tabela vacina")<br>
     
@@ -341,7 +341,7 @@ Modelo Lógico baseado no Modelo Conceitual do projeto VaCard.<br>
     from vacinacao 
     inner join pessoa
     on (vacinacao.fk_pessoa_cpf=pessoa.cpf)
-    where num_dose=1
+    where num_dose=1;
     
    ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.4/Screenshot_9.png?raw=true "Tabela Vacinacao")<br>
 
@@ -349,53 +349,53 @@ Modelo Lógico baseado no Modelo Conceitual do projeto VaCard.<br>
     from vacinacao 
     inner join pessoa
     on (vacinacao.fk_pessoa_cpf=pessoa.cpf)
-    where num_dose=2
+    where num_dose=2;
     
    ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.4/Screenshot_10.png?raw=true "Tabela Vacinacao")<br>
     
-    select * from vacinacao where data_dose > '2021-07-15'
+    select * from vacinacao where data_dose > '2021-07-15';
    
    ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.4/Screenshot_11.png?raw=true "Tabela Vacincacao")<br>
     
-    select * from pessoa where data_nasc > '1999-12-31'
+    select * from pessoa where data_nasc > '1999-12-31';
     
    ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.4/Screenshot_12.png?raw=true "Tabela Pessoa")<br>
 
 #### 9.5	INSTRUÇÕES APLICANDO ATUALIZAÇÃO E EXCLUSÃO DE DADOS (Mínimo 6)<br>
 a) Criar minimo 3 de exclusão
 
-    delete from contato where fk_pessoa_cpf = 9999
+    delete from contato where fk_pessoa_cpf = 9999;
     
    ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.5/Screenshot_1.png?raw=true "Tabela Contato")<br>
    
    
-    delete from enfermeira where cofen = 1010
+    delete from enfermeira where cofen = 1010;
     
    ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.5/Screenshot_2.png?raw=true "Tabela Enfermeira")<br>
    
    
-    delete from localidade where id_local = 8
+    delete from localidade where id_local = 8;
     
    ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.5/Screenshot_3.png?raw=true "Tabela Localidade")<br>
 
 b) Criar minimo 3 de atualização
     
-    update vacinacao set fk_localidade_id_localidade = 2 where fk_enfermeira_cofen = 3030 and num_dose = 1
+    update vacinacao set fk_localidade_id_localidade = 2 where fk_enfermeira_cofen = 3030 and num_dose = 1;
     
    ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.5/Screenshot_7.png?raw=true "Tabela Localidade")<br>
    
    
-    update pessoa set numero_logradouro = 55 where bairro = 'Carapebus' and descricao_logradouro ilike 'Assemblé%'
+    update pessoa set numero_logradouro = 55 where bairro = 'Carapebus' and descricao_logradouro ilike 'Assemblé%';
     
-   ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.5/Screenshot_4.png?raw=true "Tabela Localidade")<br>
+   ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.5/Screenshot_4.png?raw=true "Tabela pessoa")<br>
     
     update contato set descricao = '998416953' where fk_pessoa_cpf = 2222;
     
-   ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.5/Screenshot_5.png?raw=true "Tabela Localidade")<br>
+   ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.5/Screenshot_5.png?raw=true "Tabela contato")<br>
     
-    update pessoa set data_nasc= '2001-01-25' where cpf = 7777 
+    update pessoa set data_nasc= '2001-01-25' where cpf = 7777;
     
-   ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.5/Screenshot_6.png?raw=true "Tabela Localidade")<br>
+   ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.5/Screenshot_6.png?raw=true "Tabela pessoa")<br>
 
 #### 9.6	CONSULTAS COM INNER JOIN E ORDER BY (Mínimo 6)<br>
     select id_aplicacao as id, data_dose as data, num_dose as dose, pessoa.nome as vacinante,localidade.descricao as local, vacina.descricao as nome_vacina, 
@@ -412,29 +412,37 @@ b) Criar minimo 3 de atualização
     inner join contato 
     on (vacinacao.fk_pessoa_cpf=contato.fk_pessoa_cpf ) where contato.tipo = 'celular'
     group by id_aplicacao,pessoa.nome,localidade.descricao ,vacina.descricao,enfermeira.nome,contato.descricao 
-    order by id	
+    order by id;
     
-    select id_aplicacao as id, pessoa.nome as vacinante, num_dose as dose 
+   ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.6/Screenshot_1.png?raw=true "Tabela vacinacao")<br>
+    
+    select fk_pessoa_cpf as cpf, pessoa.nome as vacinante, num_dose as dose 
     from vacinacao 
     inner join pessoa 
     on ( vacinacao.fk_pessoa_cpf=pessoa.cpf) 
     where num_dose=1
-    order by id
+    order by vacinante;
+    
+   ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.5/Screenshot_2.png?raw=true "Tabela vacinacao")<br>
 
-    select id_aplicacao as id, pessoa.nome as vacinante, num_dose as dose 
+    select fk_pessoa_cpf as cpf, pessoa.nome as vacinante, num_dose as dose 
     from vacinacao 
     inner join pessoa 
     on ( vacinacao.fk_pessoa_cpf=pessoa.cpf) 
     where num_dose=2
-    order by id
+    order by vacinante;
+    
+   ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.5/Screenshot_3.png?raw=true "Tabela vacincaocao")<br>
 
-    select id_aplicacao as id, num_dose as dose , localidade.descricao as local,pessoa.nome as nome
+    select fk_pessoa_cpf as cpf, pessoa.nome as nome, num_dose as dose, localidade.descricao as local 
     from vacinacao 
     inner join localidade 
     on (localidade.id_local =vacinacao.fk_localidade_id_localidade) 
     inner join pessoa
     on ( vacinacao.fk_pessoa_cpf=pessoa.cpf)
-    order by id
+    order by nome;
+    
+   ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.5/Screenshot_4.png?raw=true "Tabela vacinacao")<br>
 
     select id_aplicacao as id, num_dose as dose , enfermeira.nome as enferm ,pessoa.nome as nome
     from vacinacao 
@@ -443,7 +451,9 @@ b) Criar minimo 3 de atualização
     inner join pessoa
     on ( vacinacao.fk_pessoa_cpf=pessoa.cpf)
     where num_dose=1
-    order by id
+    order by id;
+    
+   ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.5/Screenshot_5.png?raw=true "Tabela vacinacao")<br>
 
     select id_aplicacao as id, num_dose as dose , enfermeira.nome as enferm ,pessoa.nome as nome
     from vacinacao 
@@ -453,6 +463,8 @@ b) Criar minimo 3 de atualização
     on ( vacinacao.fk_pessoa_cpf=pessoa.cpf)
     where num_dose=2
     order by id
+    
+   ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.5/Screenshot_6.png?raw=true "Tabela vacinacao")<br>
 
 
 #### 9.7	CONSULTAS COM GROUP BY E FUNÇÕES DE AGRUPAMENTO (Mínimo 6)<br>
