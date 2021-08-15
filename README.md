@@ -289,17 +289,17 @@ Modelo Lógico baseado no Modelo Conceitual do projeto VaCard.<br>
    
 #### 9.3	CONSULTAS QUE USAM OPERADORES LÓGICOS, ARITMÉTICOS E TABELAS OU CAMPOS RENOMEADOS (Mínimo 11)
 
-    select * from vacinacao where fk_enfermeira_cofen=333 and num_dose=1
-    select * from contato where 1=1 and not tipo = 'fixo'
-    select * from vacinacao where fk_vacina_cod_vac =1 or fk_vacina_cod_vac =2
-    select * from pessoa where numero_logradouro = 301 and bairro= 'Santa luzia'
-    select * from vacinacao where data_dose > '2021-07-15' and fk_localidade_id_localidade = 4
-    select * from vacina where cod_vacina % 2 =1
-    select * from pessoa where bairro = 'Carapebus' and numero_logradouro > 10
-    select * from vacinacao where num_dose=1 and fk_enfermeira_cofen=2020
-    select cpf,nome, descricao_logradouro as rua , numero_logradouro as numero from pessoa
-    select fk_pessoa_cpf, descricao as numero, tipo from contato 
-    select descricao as nome_vacina from vacina
+    select * from vacinacao where fk_enfermeira_cofen=3030 and num_dose=1;
+    select * from contato where 1=1 and not tipo = 'fixo';
+    select * from vacinacao where fk_vacina_cod_vac =1 or fk_vacina_cod_vac =2;
+    select * from pessoa where numero_logradouro = 256 and bairro= 'Carapebus';
+    select * from vacinacao where data_dose > '2021-07-15' and fk_localidade_id_localidade = 2;
+    select * from vacina where cod_vacina % 2 =1;
+    select * from pessoa where bairro = 'Carapebus' and numero_logradouro >= 10;
+    select * from vacinacao where num_dose=1 and fk_enfermeira_cofen=2020;
+    select cpf,nome, descricao_logradouro as rua , numero_logradouro as numero from pessoa;
+    select fk_pessoa_cpf, descricao as numero, tipo from contato; 
+    select descricao as nome_vacina from vacina;
 
 #### 9.4	CONSULTAS QUE USAM OPERADORES LIKE E DATAS (Mínimo 12) <br>
 
@@ -474,40 +474,40 @@ b) Criar minimo 3 de atualização
     inner join enfermeira 
     on (vacinacao.fk_enfermeira_cofen = enfermeira.cofen ) 
     group by enfermeira.cofen 
-    order by qtd_vacinou desc
+    order by qtd_aplicacao desc;
 
     select count(num_dose) as quantidade_1_dose , pessoa.bairro 
     from vacinacao 
     inner join pessoa 
     on (vacinacao.fk_pessoa_cpf=pessoa.cpf)
     where num_dose=1
-    group by num_dose,pessoa.bairro
+    group by num_dose,pessoa.bairro;
 
     select count(num_dose) as quantidade_2_dose , pessoa.bairro 
     from vacinacao 
     inner join pessoa 
     on (vacinacao.fk_pessoa_cpf=pessoa.cpf)
     where num_dose=2
-    group by num_dose,pessoa.bairro
+    group by num_dose,pessoa.bairro;
     
     select count(fk_localidade_id_localidade) as qtd_local ,localidade.descricao as local 
     from vacinacao 
     inner join localidade
     on (localidade.id_local = vacinacao.fk_localidade_id_localidade ) 
     group by localidade.descricao 
-    order by qtd_local desc
+    order by qtd_local desc;
 
     select count(fk_vacina_cod_vac) as qtd_vacina ,vacina.descricao as vacina
     from vacinacao 
     inner join vacina
     on (vacina.cod_vacina =vacinacao.fk_vacina_cod_vac )
     group by vacina.descricao 
-    order by qtd_vacina desc
+    order by qtd_vacina desc;
     
     select count(bairro) as quantidade_cad_bairro , bairro as cadastros_por_bairro 
     from pessoa 
     group by bairro 
-    order by quantidade_cad_bairro desc
+    order by quantidade_cad_bairro desc;
 
 
 #### 9.8	CONSULTAS COM LEFT, RIGHT E FULL JOIN (Mínimo 4)<br>
@@ -615,25 +615,25 @@ b) Criar minimo 3 de atualização
     from pessoa 
     where date_part ('year',(age(current_date,data_nasc))) > 
     (select avg(date_part('year',(age(current_date,data_nasc)))) from pessoa)
-    group by acima_da_media,nome
+    group by acima_da_media,nome;
 
     select distinct cofen,nome  from enfermeira  
     inner join vacinacao  on
     (vacinacao.fk_enfermeira_cofen=enfermeira.cofen)
     where vacinacao.fk_enfermeira_cofen in (select fk_enfermeira_cofen from vacinacao )
-    order by cofen
+    order by cofen;
 
     select distinct cpf,nome  from pessoa
     inner join vacinacao  on
     (vacinacao.fk_pessoa_cpf=pessoa.cpf)
     where vacinacao.fk_pessoa_cpf in (select fk_pessoa_cpf from vacinacao )
-    order by cpf
+    order by cpf;
 
     select distinct descricao  from localidade
     inner join vacinacao  on
     (vacinacao.fk_localidade_id_localidade =localidade.id_local)
     where vacinacao.fk_localidade_id_localidade in (select id_local from vacinacao )
-    order by descricao 
+    order by descricao; 
 
 
 ># Marco de Entrega 02: Do item 9.2 até o ítem 9.10<br>
