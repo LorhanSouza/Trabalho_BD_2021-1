@@ -382,18 +382,20 @@ b) Criar minimo 3 de atualização
     
     update vacinacao set fk_localidade_id_localidade = 2 where fk_enfermeira_cofen = 3030 and num_dose = 1
     
-   ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.5/Screenshot_4.png?raw=true "Tabela Localidade")<br>
+   ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.5/Screenshot_7.png?raw=true "Tabela Localidade")<br>
    
    
     update pessoa set numero_logradouro = 55 where bairro = 'Carapebus' and descricao_logradouro ilike 'Assemblé%'
     
-   ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.5/Screenshot_5.png?raw=true "Tabela Localidade")<br>
+   ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.5/Screenshot_4.png?raw=true "Tabela Localidade")<br>
     
     update contato set descricao = '998416953' where fk_pessoa_cpf = 2222;
     
-   ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.5/Screenshot_6.png?raw=true "Tabela Localidade")<br>
+   ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.5/Screenshot_5.png?raw=true "Tabela Localidade")<br>
     
     update pessoa set data_nasc= '2001-01-25' where cpf = 7777 
+    
+   ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.5/Screenshot_6.png?raw=true "Tabela Localidade")<br>
 
 #### 9.6	CONSULTAS COM INNER JOIN E ORDER BY (Mínimo 6)<br>
     select id_aplicacao as id, data_dose as data, num_dose as dose, pessoa.nome as vacinante,localidade.descricao as local, vacina.descricao as nome_vacina, 
