@@ -515,23 +515,31 @@ b) Criar minimo 3 de atualização
     select descricao,tipo , pessoa.nome as dono 
     from contato 
     right join pessoa 
-    on (pessoa.cpf=contato.fk_pessoa_cpf)
+    on (pessoa.cpf=contato.fk_pessoa_cpf);
+    
+   ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.8/Screenshot_1.png?raw=true "Tabela contato")<br>
     
     select descricao,tipo , pessoa.nome as dono 
     from contato 
     left join pessoa 
-    on (pessoa.cpf=contato.fk_pessoa_cpf)
+    on (pessoa.cpf=contato.fk_pessoa_cpf);
+    
+   ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.8/Screenshot_2.png?raw=true "Tabela contato")<br>
     
     select nome, bairro,descricao_logradouro as nome_logradouro ,numero_logradouro as num_casa, contato.descricao as numero 
     from pessoa 
     full join contato 
-    on (pessoa.cpf=contato.fk_pessoa_cpf) 
+    on (pessoa.cpf=contato.fk_pessoa_cpf);
+    
+   ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.8/Screenshot_3.png?raw=true "Tabela pessoa")<br>
     
     select nome, cpf, vacinacao.id_aplicacao as cod_aplicacao,vacinacao.num_dose 
     from pessoa 
     full join vacinacao 
     on (pessoa.cpf=vacinacao.fk_pessoa_cpf)
-    order by cod_aplicacao
+    order by cod_aplicacao;
+    
+   ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.8/Screenshot_4.png?raw=true "Tabela pessoa")<br>
 
 #### 9.9	CONSULTAS COM SELF JOIN E VIEW (Mínimo 6)<br>
     select vacina1.data_dose as data_primeira_dose, vacina2.data_dose as data_segunda_dose , pessoa.nome
@@ -541,7 +549,9 @@ b) Criar minimo 3 de atualização
     vacinacao as vacina2
     on (vacina1.fk_pessoa_cpf = vacina2.fk_pessoa_cpf and vacina1.num_dose=1 and vacina2.num_dose=2)
     inner join pessoa
-    on (vacina1.fk_pessoa_cpf=pessoa.cpf)
+    on (vacina1.fk_pessoa_cpf=pessoa.cpf);
+    
+   ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.9/Screenshot_1.png?raw=true "Tabela vacincao")<br>
 
     create view FaixaEtária_Primeira_dose as 
     select case when date_part('year',(age(current_date,data_nasc))) <= 20 then 'ate 20'  
@@ -555,7 +565,9 @@ b) Criar minimo 3 de atualização
     inner join vacinacao 
     on (pessoa.cpf = vacinacao.fk_pessoa_cpf)
     where num_dose=1
-    group by data_nasc
+    group by data_nasc;
+    
+   ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.9/Screenshot_2.png?raw=true "View FaixaEtariaPrimeria_dose")<br>
 
     create view FaixaEtária_Segunda_dose as 
     select case when date_part('year',(age(current_date,data_nasc))) <= 20 then 'ate 20'  
@@ -569,25 +581,33 @@ b) Criar minimo 3 de atualização
     inner join vacinacao 
     on (pessoa.cpf = vacinacao.fk_pessoa_cpf)
     where num_dose=2
-    group by data_nasc
+    group by data_nasc;
+    
+   ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.9/Screenshot_3.png?raw=true "View FaixaEtariaSegunda_dose")<br>
 
     create view SegundaDose as 
     select count(num_dose) as quantidade_2_dose
     from vacinacao 
     where num_dose=2
-    group by num_dose
+    group by num_dose;
+    
+   ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.9/Screenshot_4.png?raw=true "View Primeria_dose")<br>
 
     create view PrimeiraDose as 
     select count(num_dose) as quantidade_1_dose
     from vacinacao 
     where num_dose=1
-    group by num_dose
+    group by num_dose;
+    
+   ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.9/Screenshot_5.png?raw=true "View Segunda_dose")<br>
     
     create view Aplicacoes as
     select id_aplicacao as id,fk_pessoa_cpf as cpf_vacinante, enfermeira.nome as aplicante,  data_dose , num_dose as qual_dose from vacinacao 
     right join enfermeira on
     (vacinacao.fk_enfermeira_cofen=enfermeira.cofen)
-    order by id_aplicacao 
+    order by id_aplicacao;
+    
+   ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.9/Screenshot_6.png?raw=true "View Aplicacoes")<br>
     
 #### 9.10	SUBCONSULTAS (Mínimo 4)<br>
 
