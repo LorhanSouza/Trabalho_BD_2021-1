@@ -578,8 +578,31 @@ b) Criar minimo 3 de atualização
     order by id_aplicacao 
     
 #### 9.10	SUBCONSULTAS (Mínimo 4)<br>
-     a) Criar minimo 1 envolvendo GROUP BY
-     b) Criar minimo 1 envolvendo algum tipo de junção
+
+    select date_part ('year',(age(current_date,data_nasc))) as acima_da_media,nome
+    from pessoa 
+    where date_part ('year',(age(current_date,data_nasc))) > 
+    (select avg(date_part('year',(age(current_date,data_nasc)))) from pessoa)
+    group by acima_da_media,nome
+
+    select distinct cofen,nome  from enfermeira  
+    inner join vacinacao  on
+    (vacinacao.fk_enfermeira_cofen=enfermeira.cofen)
+    where vacinacao.fk_enfermeira_cofen in (select fk_enfermeira_cofen from vacinacao )
+    order by cofen
+
+    select distinct cpf,nome  from pessoa
+    inner join vacinacao  on
+    (vacinacao.fk_pessoa_cpf=pessoa.cpf)
+    where vacinacao.fk_pessoa_cpf in (select fk_pessoa_cpf from vacinacao )
+    order by cpf
+
+    select distinct descricao  from localidade
+    inner join vacinacao  on
+    (vacinacao.fk_localidade_id_localidade =localidade.id_local)
+    where vacinacao.fk_localidade_id_localidade in (select id_local from vacinacao )
+    order by descricao 
+
 
 ># Marco de Entrega 02: Do item 9.2 até o ítem 9.10<br>
 
