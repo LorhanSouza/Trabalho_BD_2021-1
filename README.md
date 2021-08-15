@@ -423,7 +423,7 @@ b) Criar minimo 3 de atualização
     where num_dose=1
     order by vacinante;
     
-   ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.5/Screenshot_2.png?raw=true "Tabela vacinacao")<br>
+   ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.6/Screenshot_2.png?raw=true "Tabela vacinacao")<br>
 
     select fk_pessoa_cpf as cpf, pessoa.nome as vacinante, num_dose as dose 
     from vacinacao 
@@ -432,7 +432,7 @@ b) Criar minimo 3 de atualização
     where num_dose=2
     order by vacinante;
     
-   ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.5/Screenshot_3.png?raw=true "Tabela vacincaocao")<br>
+   ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.6/Screenshot_3.png?raw=true "Tabela vacincaocao")<br>
 
     select fk_pessoa_cpf as cpf, pessoa.nome as nome, num_dose as dose, localidade.descricao as local 
     from vacinacao 
@@ -442,7 +442,7 @@ b) Criar minimo 3 de atualização
     on ( vacinacao.fk_pessoa_cpf=pessoa.cpf)
     order by nome;
     
-   ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.5/Screenshot_4.png?raw=true "Tabela vacinacao")<br>
+   ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.6/Screenshot_4.png?raw=true "Tabela vacinacao")<br>
 
     select id_aplicacao as id, num_dose as dose , enfermeira.nome as enferm ,pessoa.nome as nome
     from vacinacao 
@@ -453,7 +453,7 @@ b) Criar minimo 3 de atualização
     where num_dose=1
     order by id;
     
-   ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.5/Screenshot_5.png?raw=true "Tabela vacinacao")<br>
+   ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.6/Screenshot_5.png?raw=true "Tabela vacinacao")<br>
 
     select id_aplicacao as id, num_dose as dose , enfermeira.nome as enferm ,pessoa.nome as nome
     from vacinacao 
@@ -464,7 +464,7 @@ b) Criar minimo 3 de atualização
     where num_dose=2
     order by id
     
-   ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.5/Screenshot_6.png?raw=true "Tabela vacinacao")<br>
+   ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.6/Screenshot_6.png?raw=true "Tabela vacinacao")<br>
 
 
 #### 9.7	CONSULTAS COM GROUP BY E FUNÇÕES DE AGRUPAMENTO (Mínimo 6)<br>
