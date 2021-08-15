@@ -507,6 +507,8 @@ b) Criar minimo 3 de atualização
     on (vacinacao.fk_enfermeira_cofen = enfermeira.cofen ) 
     group by enfermeira.cofen 
     order by qtd_aplicacao desc;
+   
+   ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.7/Screenshot_1.png?raw=true "Tabela vacinacao")<br>
 
     select count(num_dose) as quantidade_1_dose , pessoa.bairro 
     from vacinacao 
@@ -514,13 +516,17 @@ b) Criar minimo 3 de atualização
     on (vacinacao.fk_pessoa_cpf=pessoa.cpf)
     where num_dose=1
     group by num_dose,pessoa.bairro;
-
+   
+   ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.7/Screenshot_2.png?raw=true "Tabela vacinacao")<br>
+    
     select count(num_dose) as quantidade_2_dose , pessoa.bairro 
     from vacinacao 
     inner join pessoa 
     on (vacinacao.fk_pessoa_cpf=pessoa.cpf)
     where num_dose=2
     group by num_dose,pessoa.bairro;
+    
+   ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.7/Screenshot_3.png?raw=true "Tabela vacinacao")<br>
     
     select count(fk_localidade_id_localidade) as qtd_local ,localidade.descricao as local 
     from vacinacao 
@@ -529,6 +535,8 @@ b) Criar minimo 3 de atualização
     group by localidade.descricao 
     order by qtd_local desc;
 
+   ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.7/Screenshot_4.png?raw=true "Tabela vacinacao")<br>
+
     select count(fk_vacina_cod_vac) as qtd_vacina ,vacina.descricao as vacina
     from vacinacao 
     inner join vacina
@@ -536,12 +544,15 @@ b) Criar minimo 3 de atualização
     group by vacina.descricao 
     order by qtd_vacina desc;
     
+   ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.7/Screenshot_5.png?raw=true "Tabela vacinacao")<br>
+    
     select count(bairro) as quantidade_cad_bairro , bairro as cadastros_por_bairro 
     from pessoa 
     group by bairro 
     order by quantidade_cad_bairro desc;
-
-
+   
+   ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.7/Screenshot_6.png?raw=true "Tabela vacinacao")<br>
+   
 #### 9.8	CONSULTAS COM LEFT, RIGHT E FULL JOIN (Mínimo 4)<br>
 
     select descricao,tipo , pessoa.nome as dono 
@@ -649,11 +660,15 @@ b) Criar minimo 3 de atualização
     (select avg(date_part('year',(age(current_date,data_nasc)))) from pessoa)
     group by acima_da_media,nome;
 
+   ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.10/Screenshot_1.png?raw=true "Tabela vacinacao")<br>
+
     select distinct cofen,nome  from enfermeira  
     inner join vacinacao  on
     (vacinacao.fk_enfermeira_cofen=enfermeira.cofen)
     where vacinacao.fk_enfermeira_cofen in (select fk_enfermeira_cofen from vacinacao )
     order by cofen;
+
+   ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.10/Screenshot_2.png?raw=true "Tabela vacinacao")<br>
 
     select distinct cpf,nome  from pessoa
     inner join vacinacao  on
@@ -661,12 +676,15 @@ b) Criar minimo 3 de atualização
     where vacinacao.fk_pessoa_cpf in (select fk_pessoa_cpf from vacinacao )
     order by cpf;
 
+  ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.10/Screenshot_3.png?raw=true "Tabela vacinacao")<br>
+
     select distinct descricao  from localidade
     inner join vacinacao  on
     (vacinacao.fk_localidade_id_localidade =localidade.id_local)
     where vacinacao.fk_localidade_id_localidade in (select id_local from vacinacao )
     order by descricao; 
 
+  ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.10/Screenshot_4.png?raw=true "Tabela vacinacao")<br>
 
 ># Marco de Entrega 02: Do item 9.2 até o ítem 9.10<br>
 
