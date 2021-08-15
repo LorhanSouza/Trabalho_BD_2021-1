@@ -303,20 +303,47 @@ Modelo Lógico baseado no Modelo Conceitual do projeto VaCard.<br>
 
 #### 9.4	CONSULTAS QUE USAM OPERADORES LIKE E DATAS (Mínimo 12) <br>
 
-    select * from pessoa where nome like '%clara%'
+    select * from pessoa where nome like '%Clara%'
+    
+   ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.4/Screenshot_1.png?raw=true "Tabela Pessoa")<br>
+    
     select * from pessoa where bairro like 'c%'
-    select * from pessoa where bairro ilike 'c%' 
+    
+   ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.4/Screenshot_2.png?raw=true "Tabela Pessoa")<br>
+    
+    select * from pessoa where bairro ilike 'c%'
+    
+   ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.4/Screenshot_3.png?raw=true "Tabela Pessoa")<br>
+   
     select * from pessoa where nome like '%Campos'
+    
+   ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.4/Screenshot_4.png?raw=true "Tabela Pessoa")<br>
+   
+   
     select * from localidade where descricao not like 'UBS%'
+   
+   ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.4/Screenshot_5.png?raw=true "Tabela localidade")<br>
+   
     select * from contato where tipo ilike 'Fixo'
+    
+   ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.4/Screenshot_6.png?raw=true "Tabela contato")<br>
+   
+   
     select nome,cofen from enfermeira where nome ilike 'a%'
+    
+   ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.4/Screenshot_7.png?raw=true "Tabela enfermeira")<br>
+   
     select * from vacina where descricao ilike 'C%'
+    
+   ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.4/Screenshot_8.png?raw=true "Tabela vacina")<br>
     
     select id_aplicacao, num_dose, nome, date_part('year',(age(current_date,pessoa.data_nasc))) as idade
     from vacinacao 
     inner join pessoa
     on (vacinacao.fk_pessoa_cpf=pessoa.cpf)
     where num_dose=1
+    
+   ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.4/Screenshot_9.png?raw=true "Tabela Vacinacao")<br>
 
     select id_aplicacao, num_dose, nome, date_part('year',(age(current_date,pessoa.data_nasc))) as idade
     from vacinacao 
@@ -324,8 +351,15 @@ Modelo Lógico baseado no Modelo Conceitual do projeto VaCard.<br>
     on (vacinacao.fk_pessoa_cpf=pessoa.cpf)
     where num_dose=2
     
+   ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.4/Screenshot_10.png?raw=true "Tabela Vacinacao")<br>
+    
     select * from vacinacao where data_dose > '2021-07-15'
+   
+   ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.4/Screenshot_11.png?raw=true "Tabela Vacincacao")<br>
+    
     select * from pessoa where data_nasc > '1999-12-31'
+    
+   ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.4/Screenshot_12.png?raw=true "Tabela Pessoa")<br>
 
 #### 9.5	INSTRUÇÕES APLICANDO ATUALIZAÇÃO E EXCLUSÃO DE DADOS (Mínimo 6)<br>
 a) Criar minimo 3 de exclusão
