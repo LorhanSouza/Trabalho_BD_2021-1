@@ -364,15 +364,35 @@ Modelo Lógico baseado no Modelo Conceitual do projeto VaCard.<br>
 #### 9.5	INSTRUÇÕES APLICANDO ATUALIZAÇÃO E EXCLUSÃO DE DADOS (Mínimo 6)<br>
 a) Criar minimo 3 de exclusão
 
-    delete from contato where fk_pessoa_cpf = 999 
-    delete from enfermeira where cofen = 101
+    delete from contato where fk_pessoa_cpf = 9999
+    
+   ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.5/Screenshot_1.png?raw=true "Tabela Contato")<br>
+   
+   
+    delete from enfermeira where cofen = 1010
+    
+   ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.5/Screenshot_2.png?raw=true "Tabela Enfermeira")<br>
+   
+   
     delete from localidade where id_local = 8
+    
+   ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.5/Screenshot_3.png?raw=true "Tabela Localidade")<br>
 
 b) Criar minimo 3 de atualização
-
-    update pessoa set numero_logradouro = 256 where bairro = 'Carapebus' and descricao_logradouro ilike 'Assemblé%'
-    update contato set descricao = 998416953 where id_contato = 1
-    update vacina set descricao = 'KoviVac' where cod_vacina = 10
+    
+    update vacinacao set fk_localidade_id_localidade = 2 where fk_enfermeira_cofen = 3030 and num_dose = 1
+    
+   ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.5/Screenshot_4.png?raw=true "Tabela Localidade")<br>
+   
+   
+    update pessoa set numero_logradouro = 55 where bairro = 'Carapebus' and descricao_logradouro ilike 'Assemblé%'
+    
+   ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.5/Screenshot_5.png?raw=true "Tabela Localidade")<br>
+    
+    update contato set descricao = '998416953' where fk_pessoa_cpf = 2222;
+    
+   ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/9.5/Screenshot_6.png?raw=true "Tabela Localidade")<br>
+    
     update pessoa set data_nasc= '2001-01-25' where cpf = 7777 
 
 #### 9.6	CONSULTAS COM INNER JOIN E ORDER BY (Mínimo 6)<br>
