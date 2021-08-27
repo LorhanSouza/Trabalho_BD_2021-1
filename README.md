@@ -49,7 +49,7 @@ Os principais relatórios gerados são:<br>
 Modelo Conceitual feito a partir das informações retiradas do MiniMundo.<br>
 
 ![Alt text](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/images/IMG-20210717-WA0024.jpg?raw=true "Modelo Conceitual")<br>
-![Arquivo BrModelo do Modelo Conceitual](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/arquivos/br_ModeloV3.brM3?raw=true "BR Modelo")<br>    
+![Arquivo BrModelo do Modelo Conceitual](https://github.com/LorhanSouza/Trabalho_BD_2021-1/blob/master/arquivos/vacinacao_v3%20.png?raw=true "BR Modelo")<br>    
     
            
 #### 5.1 Validação do Modelo Conceitual
