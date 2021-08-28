@@ -36,7 +36,7 @@ O sistema poderá fornecer relatórios sobre a questão da vacinação nos bairr
 Os principais relatórios gerados são:<br>
 >1- Relatório que mostra todas as pessoas de cada bairro vacinadas.<br>
 >2- Relatório que mostra a quantidade de pessoas completamente imunizadas na cidade.<br>
->3- Relatório que mostra todas como estão avançando as vacinações por faixa etária.<br>
+>3- Relatório que mostra como estão avançando as vacinações por faixa etária.<br>
 >4- Relatório que mostra qual vacina mais está sendo utilizada.<br>
 >5- Relatório que mostra qual o local onde as pessoas mais estão sendo vacinadas.<br>
 
