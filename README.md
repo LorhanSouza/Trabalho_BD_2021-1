@@ -690,16 +690,13 @@ b) Criar minimo 3 de atualização
 
 ### 10 RELATÓRIOS E GRÁFICOS
 
-#### a) análises e resultados provenientes do banco de dados desenvolvido (usar modelo disponível)
-#### b) link com exemplo de relatórios será disponiblizado pelo professor no AVA
-#### OBS: Esta é uma atividade de grande relevância no contexto do trabalho. Mantenha o foco nos 5 principais relatórios/resultados visando obter o melhor resultado possível.
+    https://colab.research.google.com/drive/1-ImHAu1x3CjXZ9kPsszYC7VA_qfXyYdr#scrollTo=NK2kECRr7eH0
 
     
 
 ### 11	AJUSTES DA DOCUMENTAÇÃO, CRIAÇÃO DOS SLIDES E VÍDEO PARA APRESENTAÇAO FINAL <br>
 
-#### a) Modelo (pecha kucha)<br>
-#### b) Tempo de apresentação 6:40 
+    https://youtu.be/0wr5k4zrVZk
 
 ># Marco de Entrega 03: Itens 10 e 11<br>
 <br>
